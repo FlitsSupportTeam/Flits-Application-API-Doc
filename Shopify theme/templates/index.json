@@ -1,0 +1,10 @@
+{
+  "layout": "theme.flits-api-docs",
+  "sections": {
+    "flits_api_docs": {
+      "type": "flits-api-docs",
+      "settings": {}
+    }
+  },
+  "order": ["flits_api_docs"]
+}

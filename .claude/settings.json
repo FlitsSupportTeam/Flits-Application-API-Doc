@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(echo \"[exit:$?]\")",
+      "Bash(xargs wc -l)",
+      "Read(//tmp/**)",
+      "Bash(cd \"c:/Users/admin/Downloads/apiDocCursor\" *)",
+      "Bash(rm -f expected_build.css)",
+      "Bash(node --check js/render/sidebar.js)",
+      "Bash(node --input-type=module -e ' *)",
+      "Bash(node --check js/main.js)",
+      "Bash(node --check js/render/navbar.js)",
+      "Bash(cp 'data/Flits App.postman_collection.json' __TRACKED_VAR__/loyalty-backup.json)",
+      "Bash(node __TRACKED_VAR__/restructure-loyalty.mjs)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('data/Flits App.postman_collection.json','utf8'\\)\\); console.log\\('valid JSON'\\)\")",
+      "Bash(node -e \"const fs=require\\('fs'\\);const a=fs.readFileSync\\('Shopify theme/assets/flits-api-docs.postman_collection.json','utf8'\\);console.log\\('Shopify copy still has old structure \\(Get Rules at loyalty top-level\\):', a.includes\\('Reward Program'\\)?'CHANGED!':'unchanged'\\)\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\admin\\Downloads\\apiDocCursor"
+    ]
+  }
+}

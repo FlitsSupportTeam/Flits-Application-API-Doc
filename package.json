@@ -1,0 +1,13 @@
+{
+  "name": "flits-api-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit:toc": "node scripts/audit-toc.mjs",
+    "build:shopify": "node scripts/build-shopify-theme.mjs",
+    "serve": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.12"
+  }
+}

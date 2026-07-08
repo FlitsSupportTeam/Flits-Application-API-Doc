@@ -1,0 +1,2 @@
+Run: node scripts/build-shopify-theme.mjs
+Then this folder will contain flits-api-docs.js, .css, and .postman_collection.json

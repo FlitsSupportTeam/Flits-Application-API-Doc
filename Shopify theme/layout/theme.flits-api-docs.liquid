@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Custom Support Ironman FLITS - 08-07-2026 START -->
+  <meta name="description" content="Flits API Documentation — Loyalty & Wishlist APIs for Shopify">
+  <!-- Custom Support Ironman FLITS - 08-07-2026 END -->
+  <title>{{ page_title | default: shop.name }}</title>
+  {{ content_for_header }}
+  <link rel="stylesheet" href="{{ 'flits-api-docs.css' | asset_url }}">
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0666/1200/3110/files/flits_logo.png?v=1780663722">
+  <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0666/1200/3110/files/flits_logo.png?v=1780663722">
+  <style>
+    body { margin: 0; overflow: hidden; }
+    #shopify-section-header,
+    #shopify-section-footer,
+    .shopify-section-group-header-group,
+    .shopify-section-group-footer-group,
+    header.header,
+    footer.footer { display: none !important; }
+  </style>
+</head>
+<body>
+  {{ content_for_layout }}
+  {{ content_for_footer }}
+  <script>
+    window.FLITS_DOC_CONFIG = {
+      collectionUrl: {{ 'flits-api-docs.postman_collection.json' | asset_url | json }}
+    };
+  </script>
+  <script type="module" src="{{ 'flits-api-docs.js' | asset_url }}"></script>
+</body>
+</html>

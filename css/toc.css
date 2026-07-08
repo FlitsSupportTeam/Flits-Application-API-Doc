@@ -1,0 +1,170 @@
+/**
+ * Right sidebar — On this page (Klaviyo-style TOC)
+ */
+
+/* #toc-root is a flex item of .docs-layout — pin its width so it never collapses */
+#toc-root {
+  flex-shrink: 0;
+  min-width: var(--toc-width);
+  width: var(--toc-width);
+}
+
+.toc-aside {
+  width: 100%;   /* fill #toc-root's established width */
+  flex-shrink: 0;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.toc-aside__sticky {
+  /* position: sticky is removed — #toc-root is a flex sibling of #page-scroll,
+     not its ancestor, so sticky never activates relative to page scroll.
+     The TOC column naturally stays in-place as the content scrolls. */
+  max-height: calc(100vh - var(--topbar-height) - 35px - var(--space-8));
+  overflow-y: auto;
+  padding-right: var(--space-2);
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar) transparent;
+}
+
+/* Label is a <button> (for mobile collapse) styled to look like the old <p>.
+   On desktop it is non-interactive; the chevron is hidden. */
+.toc__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  width: 100%;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+  text-align: left;
+  cursor: default;
+}
+
+.toc__chevron {
+  display: none;          /* desktop: no collapse affordance */
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid var(--border);
+}
+
+.toc__item {
+  margin: 0;
+}
+
+.toc__link {
+  display: block;
+  width: 100%;
+  padding: 0.35rem 0 0.35rem var(--space-4);
+  margin-left: -1px;
+  border: none;
+  border-left: 2px solid transparent;
+  background: transparent;
+  font: inherit;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  outline-offset: 2px;
+  transition:
+    color 0.2s ease,
+    border-color 0.25s ease,
+    background-color 0.2s ease,
+    font-weight 0.15s ease;
+}
+
+.toc__link:hover {
+  color: var(--text);
+  background: var(--bg-subtle);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.toc__link.is-active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  font-weight: 500;
+  background: var(--accent-subtle);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.toc__item--level-3 .toc__link {
+  padding-left: calc(var(--space-4) + var(--space-3));
+  font-size: 0.75rem;
+}
+
+.toc__item--level-4 .toc__link {
+  padding-left: calc(var(--space-4) + var(--space-6));
+  font-size: 0.6875rem;
+}
+
+.toc__item--muted span {
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+  padding-left: var(--space-4);
+}
+
+/* ── ≤1199px · On the reflowed (mobile/tablet) layout the "On this page" card
+   is HIDDEN (see the .is-collapsed rule below). The card styling is kept for
+   reference but the collapsed state — which is the default at these widths — is
+   display:none, so the TOC does not appear. (Code / Try It still show.) */
+@media (max-width: 1199px) {
+  #toc-root {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .toc-aside {
+    width: 100%;
+    margin: var(--space-6) 0 0;
+    padding: var(--space-4) var(--space-5);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-elevated);
+  }
+
+  /* Drop the sticky scroll-box behaviour — the document scrolls now */
+  .toc-aside__sticky {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+  }
+
+  /* Label becomes an interactive disclosure */
+  .toc__label {
+    margin: 0;
+    cursor: pointer;
+    min-height: 32px;
+  }
+  .toc__chevron { display: block; }
+
+  .toc__list { margin-top: var(--space-3); }
+
+  /* Hide the "On this page" card on the reflowed layout. It is collapsed by
+     default here and its toggle lives inside the card, so hiding the collapsed
+     state removes the TOC entirely below 1198px. */
+  .toc-aside.is-collapsed { display: none; }
+
+  /* Collapsed state (default on mobile — set by buildRightTOC) */
+  .toc-aside.is-collapsed .toc__list { display: none; }
+  .toc-aside:not(.is-collapsed) .toc__chevron { transform: rotate(180deg); }
+
+  /* Bigger touch targets for the section links */
+  .toc__link { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+}
