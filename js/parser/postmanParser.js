@@ -154,7 +154,7 @@ function parseRequest(item, context, slugRegistry) {
     headers.push({
       key: 'x-integration-app-name',
       value: '{{app_name}}',
-      description: 'Integration application name. Set {{app_name}} via Environment Variables.',
+      description: 'Name of the application that is integrating with the Flits API — for example: Mobile App, Shopify Storefront, Headless Storefront, Custom App, React Storefront, or Flutter App. Set {{app_name}} via Environment Variables.',
       disabled: false,
     });
   }
@@ -200,12 +200,12 @@ function parseRequest(item, context, slugRegistry) {
   // Append x-integration-app-name documentation note to every API description block.
   // Only added once; guard prevents duplication on any future re-parse.
   if (!api.description.includes('x-integration-app-name')) {
-    const _integrationNote = '\n\n`x-integration-app-name` header accepts the integration application name using the global variable `{{app_name}}`.';
+    const _integrationNote = '\n\n> **`x-integration-app-name`** — Mention the name of the application for which you are integrating the Flits API, using the global variable `{{app_name}}`. Set its value in **Environment Variables**. Examples: `Mobile App`, `Shopify Storefront`, `Headless Storefront`, `Custom App`, `React Storefront`, `Flutter App`.';
     api.description = api.description
       ? api.description + _integrationNote
       : _integrationNote.trim();
     api.descriptionPlain = (api.descriptionPlain ? api.descriptionPlain + ' ' : '') +
-      'x-integration-app-name header accepts the integration application name using the global variable {{app_name}}.';
+      'x-integration-app-name Mention the name of the application for which you are integrating the Flits API, using the global variable {{app_name}}. Set its value in Environment Variables. Examples: Mobile App, Shopify Storefront, Headless Storefront, Custom App, React Storefront, Flutter App.';
   }
 
   api.curl = generateCurl(api);
