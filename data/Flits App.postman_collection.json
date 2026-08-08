@@ -4248,6 +4248,129 @@
           ]
         },
         {
+          "name": "Balance Adjustment",
+          "description": "## Balance Adjustment\n\nManually adjust a customer's Loyalty Points or Store Credits outside the normal earn-and-redeem flow. Use these endpoints to add or deduct a balance with a recorded reason — for goodwill gestures, corrections, or compensation.\n\n| API | Description |\n| --- | --- |\n| **Adjust Points or Credits** | Add or deduct a customer's Loyalty Points or Store Credits, with a reason and an optional expiry. |",
+          "item": [
+            {
+              "name": "Adjust Points or Credits",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "The request body must be JSON."
+                  },
+                  {
+                    "key": "x-api-key",
+                    "value": "{{x_api_key}}",
+                    "description": "This will be provided by Flits Team."
+                  }
+                ],
+                "url": {
+                  "raw": "https://l7dwmnkv4xwd2wytgus6eajvbq0xtkli.lambda-url.us-east-2.on.aws/custom_action/{{custom_action_id}}",
+                  "protocol": "https",
+                  "host": [
+                    "l7dwmnkv4xwd2wytgus6eajvbq0xtkli",
+                    "lambda-url",
+                    "us-east-2",
+                    "on",
+                    "aws"
+                  ],
+                  "path": [
+                    "custom_action",
+                    "{{custom_action_id}}"
+                  ],
+                  "variable": [
+                    {
+                      "key": "custom_action_id",
+                      "value": "{{custom_action_id}}",
+                      "description": "This will be provided by Flits Team."
+                    }
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_email\": \"{{customer_email}}\",\n  \"credit_details\": {\n    \"credit_value\": 20,\n    \"comment_text\": \"Goodwill gesture for delayed delivery\",\n    \"time_upto\": -1,\n    \"credit_type\": 1\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "description": "## Adjust Points or Credits\n\nManually add or deduct a customer's **Loyalty Points** or **Store Credits**, with a reason and an optional expiry. Use it for goodwill gestures, corrections, compensation, or any balance change made outside the normal earn-and-redeem flow.\n\n---\n\n### Endpoint\n\n```\nPOST https://l7dwmnkv4xwd2wytgus6eajvbq0xtkli.lambda-url.us-east-2.on.aws/custom_action/{{custom_action_id}}\n```\n\n`{{custom_action_id}}` identifies the adjustment action configured for your store.\n\n---\n\n### Headers\n\n| Header | Value | Required | Description |\n| --- | --- | --- | --- |\n| `Content-Type` | `application/json` | Yes | The request body must be JSON. Requests sent without it are rejected with `415`. |\n| `x-api-key` | `{{x_api_key}}` | Yes | This will be provided by Flits Team. |\n\n---\n\n### Identifying the customer\n\nProvide **any one** of the following at the top level of the body — they are alternatives, not all required:\n\n| Field | Example |\n| --- | --- |\n| `customer_email` | `customer@example.com` |\n| `shopify_customer_id` | `1234567890` |\n| `customer_phone` | `+911234567890` |\n\nIf none is supplied, the request fails with `400`.\n\n---\n\n### Body Parameters\n\nAll adjustment fields live inside the `credit_details` object.\n\n| Field | Type | Required | Description |\n| --- | --- | --- | --- |\n| `credit_value` | number | Yes | How much to adjust. A positive number adds, a negative number deducts. Must be a plain number — see the note below. |\n| `comment_text` | string | Optional | The reason for the adjustment, stored alongside it for your records. |\n| `time_upto` | number | Optional | Number of days after which the adjusted amount expires. Use `-1` so it never expires. |\n| `credit_type` | number | Optional | `1` = Loyalty Points, `2` = Store Credits. Defaults to Loyalty Points when omitted. |\n\n---\n\n### How `credit_value` works\n\n| Goal | Send | Result |\n| --- | --- | --- |\n| Add 20 | `20` | 20 added to the balance |\n| Deduct 20 | `-20` | 20 removed from the balance |\n\n> **Do not use a `+` prefix.** `\"+20\"` is treated as text, not a number — the API still replies `200 OK` but **no adjustment is made**. Write `20`, not `+20`. For the same reason, always send `credit_value` as a number (`20`), never as a quoted string (`\"20\"`).\n\n---\n\n### Expiry (`time_upto`)\n\n| Value | Meaning |\n| --- | --- |\n| `-1` | Never expires |\n| `30` | Expires 30 days after the adjustment |\n| omitted | Treated as no expiry set |\n\n---\n\n### Loyalty Points vs Store Credits (`credit_type`)\n\n| Value | Balance adjusted |\n| --- | --- |\n| `1` | Loyalty Points |\n| `2` | Store Credits |\n| omitted | Loyalty Points (default) |\n\n---\n\n### Example Request\n\n```json\n{\n  \"customer_email\": \"customer@example.com\",\n  \"credit_details\": {\n    \"credit_value\": 20,\n    \"comment_text\": \"Goodwill gesture for delayed delivery\",\n    \"time_upto\": -1,\n    \"credit_type\": 1\n  }\n}\n```\n\n**Deduct instead:** set `\"credit_value\": -20`.\n**Adjust Store Credits instead:** set `\"credit_type\": 2`.\n**Identify by Shopify Customer ID instead:** replace `customer_email` with `\"shopify_customer_id\": \"1234567890\"`.\n\n---\n\n### Important: a `200` response does not confirm the adjustment\n\nThis endpoint validates only that a customer identifier is present, that the body is a JSON object, and that the API key and `Content-Type` are valid. Everything else is processed asynchronously, so the response is always the same generic acknowledgement.\n\nThat means the API replies `200 OK` even when:\n\n- the customer does not exist, or the email is malformed\n- `credit_value` is missing, empty, `null`, or a non-numeric string\n- `credit_type` or `time_upto` hold values outside the documented range\n\nAlways confirm the outcome by re-reading the customer's balance (for example with **Get Profile**) rather than relying on the `200` alone.\n\n---\n\n### Response Scenarios\n\n| Status | Scenario | Description |\n| --- | --- | --- |\n| `200` | Adjustment accepted | The request was accepted for processing. See the note above — this does not guarantee the balance changed. |\n| `400` | Customer identifier required | None of `customer_email`, `customer_phone`, or `shopify_customer_id` was supplied. |\n| `400` | Body must be a JSON object | The body was valid JSON but not an object (for example an array or a bare string). |\n| `401` | Invalid API key | The `x-api-key` header is missing, empty, or incorrect. |\n| `415` | Unsupported Media Type | The request was sent without the `Content-Type: application/json` header. |"
+              },
+              "response": [
+                {
+                  "name": "200 OK — Adjustment Accepted",
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"message\": \"Custom action triggered successfully.\"\n}"
+                },
+                {
+                  "name": "400 Bad Request — Customer Identifier Required",
+                  "status": "Bad Request",
+                  "code": 400,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"error\": \"One of 'customer_email', 'customer_phone', or 'shopify_customer_id' must be provided\"\n}"
+                },
+                {
+                  "name": "400 Bad Request — Body Must Be a JSON Object",
+                  "status": "Bad Request",
+                  "code": 400,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"error\": \"Decrypted body must be a valid JSON object\"\n}"
+                },
+                {
+                  "name": "401 Unauthorized — Invalid API Key",
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"error\": \"Invalid API key (access_token)\"\n}"
+                },
+                {
+                  "name": "415 Unsupported Media Type — Content-Type Required",
+                  "status": "Unsupported Media Type",
+                  "code": 415,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/html"
+                    }
+                  ],
+                  "_postman_previewlanguage": "html",
+                  "body": "<!doctype html>\n<html lang=en>\n<title>415 Unsupported Media Type</title>\n<h1>Unsupported Media Type</h1>\n<p>Did not attempt to load JSON data because the request Content-Type was not &#39;application/json&#39;.</p>\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Customer Profile",
           "item": [
             {
@@ -12787,6 +12910,11 @@
     },
     {
       "key": "x_api_key",
+      "value": "",
+      "description": "This will be provided by Flits Team."
+    },
+    {
+      "key": "custom_action_id",
       "value": "",
       "description": "This will be provided by Flits Team."
     }

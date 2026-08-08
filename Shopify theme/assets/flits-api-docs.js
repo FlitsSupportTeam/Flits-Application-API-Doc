@@ -2993,7 +2993,7 @@ function parseRequest(item, context, slugRegistry) {
     headers.push({
       key: "x-integration-app-name",
       value: "{{app_name}}",
-      description: "Name of the application that is integrating with the Flits API — for example: Mobile App, Shopify Storefront, Headless Storefront, Custom App, React Storefront, or Flutter App. Set {{app_name}} via Environment Variables.",
+      description: "Mention the name of the application for which you are integrating the Flits API. Examples: Mobile App, Shopify Storefront, Headless Storefront, Custom App, React Storefront, Flutter App. Set {{app_name}} via Environment Variables.",
       disabled: false
     });
   }
