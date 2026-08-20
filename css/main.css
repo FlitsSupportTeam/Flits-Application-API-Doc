@@ -768,6 +768,38 @@ html:has(body.sidebar-open) { overflow: hidden; }
   color: var(--text-content);
 }
 
+/* Callout variant of the blockquote component. Opt-in from markdown via
+   `> [!IMPORTANT] Title` so existing plain blockquotes are unaffected. */
+.prose .md-callout {
+  border-left: 4px solid var(--callout-border);
+  background: var(--callout-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-5) 0;
+}
+
+.prose .md-callout .md-callout__title {
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--callout-title);
+}
+
+.prose .md-callout .md-callout__body {
+  margin: 0 0 var(--space-2);
+  color: var(--text-content);
+}
+
+.prose .md-callout .md-callout__body:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .prose .md-callout {
+    padding: var(--space-3);
+  }
+}
+
 .md-table-wrap {
   overflow-x: auto;
   margin: var(--space-4) 0 var(--space-6);

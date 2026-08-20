@@ -204,6 +204,21 @@ function markdownToHtml(markdown) {
       i++;
       continue;
     }
+    const calloutStart = trimmed.match(/^>\s?\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*(.*)$/i);
+    if (calloutStart) {
+      closeLists();
+      const kind = calloutStart[1].toLowerCase();
+      const title = calloutStart[2].trim() || calloutStart[1];
+      const body = [];
+      i++;
+      while (i < lines.length && /^>\s?/.test(lines[i].trim())) {
+        body.push(lines[i].trim().replace(/^>\s?/, ""));
+        i++;
+      }
+      const bodyHtml = body.filter((l) => l.trim()).map((l) => `<p class="md-callout__body">${inlineFormat(l)}</p>`).join("");
+      out.push(`<blockquote class="md-quote md-callout md-callout--${kind}">` + `<p class="md-callout__title">${inlineFormat(title)}</p>` + bodyHtml + `</blockquote>`);
+      continue;
+    }
     if (/^>\s?/.test(trimmed)) {
       closeLists();
       out.push(`<blockquote class="md-quote">${inlineFormat(trimmed.replace(/^>\s?/, ""))}</blockquote>`);

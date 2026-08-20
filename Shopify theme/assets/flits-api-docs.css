@@ -54,6 +54,10 @@
   --bg: #fafafa;
   --bg-elevated: #ffffff;
   --bg-subtle: #f4f4f5;
+  /* Callout (highlighted note) variant of the blockquote component */
+  --callout-bg: #fffbeb;
+  --callout-border: #f59e0b;
+  --callout-title: #92400e;
   --bg-code: #18181b;
   --border: #e4e4e7;
   --border-subtle: #f0f0f2;
@@ -86,6 +90,10 @@
   --bg: #09090b;
   --bg-elevated: #121214;
   --bg-subtle: #1a1a1e;
+  /* Callout (highlighted note) variant of the blockquote component */
+  --callout-bg: rgba(245, 158, 11, 0.10);
+  --callout-border: #f59e0b;
+  --callout-title: #fcd34d;
   --bg-code: #0c0c0e;
   --border: #27272a;
   --border-subtle: #1f1f23;
@@ -2747,6 +2755,38 @@ html:has(body.sidebar-open) { overflow: hidden; }
   padding-left: var(--space-4);
   margin: var(--space-4) 0;
   color: var(--text-content);
+}
+
+/* Callout variant of the blockquote component. Opt-in from markdown via
+   `> [!IMPORTANT] Title` so existing plain blockquotes are unaffected. */
+.prose .md-callout {
+  border-left: 4px solid var(--callout-border);
+  background: var(--callout-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-5) 0;
+}
+
+.prose .md-callout .md-callout__title {
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--callout-title);
+}
+
+.prose .md-callout .md-callout__body {
+  margin: 0 0 var(--space-2);
+  color: var(--text-content);
+}
+
+.prose .md-callout .md-callout__body:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .prose .md-callout {
+    padding: var(--space-3);
+  }
 }
 
 .md-table-wrap {
