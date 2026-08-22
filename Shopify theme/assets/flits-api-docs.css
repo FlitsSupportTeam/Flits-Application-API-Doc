@@ -1293,6 +1293,79 @@
   color: #6b6b75;
 }
 
+/* ── Optional body-field checkbox row ───────────────────────────────────── */
+/* Row containing the checkbox + field-name label */
+.tryit__field-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 5px;
+}
+
+/* The opt-in checkbox */
+.tryit__opt-cb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
+  position: relative;
+  top: 0;
+}
+.tryit__opt-cb:hover {
+  border-color: rgba(99, 91, 255, 0.55);
+  background: rgba(99, 91, 255, 0.08);
+}
+.tryit__opt-cb:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 91, 255, 0.28);
+}
+/* Checked state — filled accent background with a tick */
+.tryit__opt-cb:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.tryit__opt-cb:checked::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: -1px;
+  width: 7px;
+  height: 4px;
+  border-left: 1.5px solid #fff;
+  border-bottom: 1.5px solid #fff;
+  transform: rotate(-45deg) translateY(2px);
+}
+
+/* Label next to the checkbox — no bottom margin (head row handles spacing) */
+.tryit__lbl--opt {
+  margin-bottom: 0 !important;
+  cursor: pointer;
+  color: #71717a;
+  transition: color 0.12s;
+}
+.tryit__field-head:has(.tryit__opt-cb:checked) .tryit__lbl--opt {
+  color: #c4b5fd;  /* accent-muted tint when active */
+}
+
+/* Body input when its checkbox is unchecked — visually dimmed */
+.tryit__bval:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: #52525b;
+}
+.tryit__bval:disabled:focus {
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+}
+
 .tryit__token-wrap {
   display: flex;
   gap: 6px;
