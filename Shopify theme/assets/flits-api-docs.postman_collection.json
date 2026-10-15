@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "d6652d1a-f22f-4fab-a95b-459c3013c308",
     "name": "Flits",
-    "description": "## Flits API Documentation\n\nWelcome to the Flits API Documentation.\n\nThe Flits APIs allow merchants and developers to integrate Loyalty Programs, Store Credits, VIP Tiers, Customer Profiles, Referrals, and Wishlist functionality directly into their storefronts and applications.\n\nUsing these APIs, you can:\n\n- Retrieve customer loyalty information.\n- Manage and redeem loyalty points.\n- Manage store credits.\n- Access and update customer profile information.\n- Manage VIP tiers and customer benefits.\n- Build referral experiences.\n- Manage wishlists and wishlist analytics.\n- Track customer interactions and events.\n- Integrate Flits features into custom storefronts and applications.\n\n---\n\n## Available API Modules\n\n### Flits Loyalty\n\nThe Flits Loyalty APIs provide access to:\n\n- Reward Program APIs\n- Referral APIs\n- VIP Tier APIs\n- Store Credit APIs\n- Balance Adjustment APIs\n- Points Estimation APIs\n- Customer Profile APIs\n\nThese APIs can be used to:\n\n- Retrieve customer balances and activities.\n- Fetch store-level loyalty rules.\n- Apply loyalty points and store credits.\n- Manage customer profile information.\n- Retrieve customer benefits and VIP tiers.\n- Build referral experiences.\n- Manually add or deduct loyalty points and store credits.\n- Estimate the points a customer will earn before an order is placed.\n\n---\n\n#### Reward Program\n\nProvides APIs for:\n\n- Earn and Redeem Rules\n- Customer Available Spent Rules\n- Customer Loyalty Balance\n- Loyalty Activity\n- Applying Loyalty Points\n- Loyalty Language Content\n\n---\n\n#### Referral\n\nProvides APIs for:\n\n- Customer referral information\n- Referral rewards\n- Referral links\n- Accepting a referral invitation for an existing customer\n\n---\n\n#### VIP Tier\n\nProvides APIs for:\n\n- Customer's current tier\n- Customer benefits\n- Tier activity history\n\n---\n\n#### Store Credit\n\nProvides APIs for:\n\n- Customer store credit balance\n- Store credit activity\n- Available redemption rules\n- Applying store credits\n- Language content\n\n---\n\n#### Balance Adjustment\n\nProvides APIs for:\n\n- Manually adding loyalty points or store credits\n- Manually deducting loyalty points or store credits\n- Recording a reason and an optional expiry for the adjustment\n\n---\n\n#### Points Estimation\n\nProvides APIs for:\n\n- Estimating the loyalty points a customer will earn for an order\n- Previewing earnable points before the order is placed\n\n---\n\n#### Customer Profile\n\nProvides APIs for:\n\n- Customer profile information\n- Updating customer profile\n- Managing birthdate information\n\n---\n\n### Flits Wishlist\n\nProvides APIs for:\n\n- Adding products to wishlist\n- Removing products from wishlist\n- Retrieving wishlist data\n- Linking guest wishlists\n- Analytics event tracking\n- Creating and managing wishlist collections\n- Sharing a wishlist, a collection, or a selection of items\n- Collection-scoped item queries with filtering, sorting and pagination\n\n---\n\n#### Wishlist Core\n\nProvides APIs for:\n\n- Add to Wishlist\n- Remove from Wishlist\n- Get Wishlist Data\n- Link Guest to Shopify Customer\n\n---\n\n#### Analytics Events\n\nProvides APIs for:\n\n- Wishlist Button Click\n- Add to Cart\n\n---\n\n#### Wishlist Share and Manage Collections\n\nProvides APIs for:\n\n- Adding and removing wishlist items, including within collections\n- Creating, renaming, deleting, moving and duplicating collections\n- Sharing the whole wishlist, a single collection, or a custom selection of items\n- Shared-page visitor reads and interaction tracking\n- Collection-scoped item queries with filtering, sorting, search and cursor pagination\n\n---\n\n## Authentication\n\nMost Flits APIs require:\n\n- `storeID`\n- `customerID`\n- `flits_token`\n\nWishlist APIs additionally require:\n\n- `merchant_id`\n- JWT Bearer Token\n\n---\n\n## Environment Variables\n\nThe documentation supports global environment variables.\n\nMerchants can configure variables such as:\n\n- `{{base_url}}`\n- `{{storeID}}`\n- `{{customerID}}`\n- `{{flits_token}}`\n- Wishlist variables\n\nand use them directly inside Try It and code examples.\n\n---\n\n## Real Response Examples\n\nThe documentation includes:\n\n- Real response examples\n- Multiple status examples\n- Error responses\n- Validation responses\n- Business logic responses\n\n---\n\n## Try It Feature\n\nEvery supported API includes:\n\n- cURL examples\n- JavaScript examples\n- PHP examples\n- Python examples\n- Interactive Try It functionality",
+    "description": "## Flits API Documentation\n\nWelcome to the Flits API Documentation.\n\nThe Flits APIs allow merchants and developers to integrate Loyalty Programs, Store Credits, VIP Tiers, Customer Profiles, Referrals, and Wishlist functionality directly into their storefronts and applications.\n\nUsing these APIs, you can:\n\n- Retrieve customer loyalty information.\n- Manage and redeem loyalty points.\n- Manage store credits.\n- Access and update customer profile information.\n- Manage VIP tiers and customer benefits.\n- Build referral experiences.\n- Manage wishlists and wishlist analytics.\n- Track customer interactions and events.\n- Integrate Flits features into custom storefronts and applications.\n\n---\n\n## Available API Modules\n\n### Flits Loyalty\n\nThe Flits Loyalty APIs provide access to:\n\n- Reward Program APIs\n- Referral APIs\n- VIP Tier APIs\n- Store Credit APIs\n- Balance Adjustment APIs\n- Points Estimation APIs\n- Customer Profile APIs\n\nThese APIs can be used to:\n\n- Retrieve customer balances and activities.\n- Fetch store-level loyalty rules.\n- Apply loyalty points and store credits.\n- Manage customer profile information.\n- Retrieve customer benefits and VIP tiers.\n- Build referral experiences.\n- Manually add or deduct loyalty points and store credits.\n- Estimate the points a customer will earn before an order is placed.\n\n---\n\n#### Reward Program\n\nProvides APIs for:\n\n- Earn and Redeem Rules\n- Customer Available Spent Rules\n- Customer Loyalty Balance\n- Loyalty Activity\n- Applying Loyalty Points\n- Loyalty Language Content\n\n---\n\n#### Referral\n\nProvides APIs for:\n\n- Customer referral information\n- Referral rewards\n- Referral links\n- Accepting a referral invitation for an existing customer\n\n---\n\n#### VIP Tier\n\nProvides APIs for:\n\n- Customer's current tier\n- Customer benefits\n- Tier activity history\n\n---\n\n#### Store Credit\n\nProvides APIs for:\n\n- Customer store credit balance\n- Store credit activity\n- Available redemption rules\n- Applying store credits\n- Language content\n\n---\n\n#### Balance Adjustment\n\nProvides APIs for:\n\n- Manually adding loyalty points or store credits\n- Manually deducting loyalty points or store credits\n- Recording a reason and an optional expiry for the adjustment\n\n---\n\n#### Points Estimation\n\nProvides APIs for:\n\n- Estimating the loyalty points a customer will earn for an order\n- Previewing earnable points before the order is placed\n\n---\n\n#### Customer Profile\n\nProvides APIs for:\n\n- Customer profile information\n- Updating customer profile\n- Managing birthdate information\n\n---\n\n### Flits Wishlist\n\nProvides APIs for:\n\n- Adding products to wishlist\n- Removing products from wishlist\n- Retrieving wishlist data\n- Linking guest wishlists\n- Analytics event tracking\n- Creating and managing wishlist collections\n- Sharing a wishlist, a collection, or a selection of items\n- Collection-scoped item queries with filtering, sorting and pagination\n- Saving items for later (Save for Later)\n\n---\n\n#### Wishlist Core\n\nProvides APIs for:\n\n- Add to Wishlist\n- Remove from Wishlist\n- Get Wishlist Data\n- Link Guest to Shopify Customer\n\n---\n\n#### Analytics Events\n\nProvides APIs for:\n\n- Wishlist Button Click\n- Add to Cart\n\n---\n\n#### Save for Later\n\nProvides APIs for:\n\n- Saving cart or product items for later (reuses the wishlist endpoints with `wishlist_type: \"save_for_later\"`)\n- Reading and counting saved items\n- Removing saved items (single and bulk)\n- Moving saved items back to the cart\n- Save-for-Later analytics\n\n---\n\n#### Wishlist Share and Manage Collections\n\nProvides APIs for:\n\n- Adding and removing wishlist items, including within collections\n- Creating, renaming, deleting, moving and duplicating collections\n- Sharing the whole wishlist, a single collection, or a custom selection of items\n- Shared-page visitor reads and interaction tracking\n- Collection-scoped item queries with filtering, sorting, search and cursor pagination\n\n---\n\n## Authentication\n\nMost Flits APIs require:\n\n- `storeID`\n- `customerID`\n- `flits_token`\n\nWishlist APIs additionally require:\n\n- `merchant_id`\n- JWT Bearer Token\n\n---\n\n## Environment Variables\n\nThe documentation supports global environment variables.\n\nMerchants can configure variables such as:\n\n- `{{base_url}}`\n- `{{storeID}}`\n- `{{customerID}}`\n- `{{flits_token}}`\n- Wishlist variables\n\nand use them directly inside Try It and code examples.\n\n---\n\n## Real Response Examples\n\nThe documentation includes:\n\n- Real response examples\n- Multiple status examples\n- Error responses\n- Validation responses\n- Business logic responses\n\n---\n\n## Try It Feature\n\nEvery supported API includes:\n\n- cURL examples\n- JavaScript examples\n- PHP examples\n- Python examples\n- Interactive Try It functionality",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "51481374",
     "_collection_link": "https://go.postman.co/collection/51481374-d6652d1a-f22f-4fab-a95b-459c3013c308?source=collection_link"
@@ -13261,9 +13261,1168 @@
               ]
             }
           ]
+        },
+        {
+          "name": "Save for Later",
+          "description": "## Save for Later\n\nSave for Later lets shoppers set aside products they are not ready to buy yet — moving an item out of the cart (or off a product page) into a personal \"saved\" list they can return to and move back into the cart later.\n\nUnder the hood, **Save for Later is not a separate backend service.** It reuses the same Flits Wishlist endpoints (`POST /core/wishlist/actions` and `POST /core/wishlist/items/query`) and tags every record with:\n\n```json\n\"wishlist_type\": \"save_for_later\"\n```\n\nThis one field is what separates a customer's Save-for-Later list from their normal Wishlist. Everything else — authentication, request shape, guest handling, pagination — works exactly like the Wishlist APIs.\n\n### What you can do\n\n- **Save** a cart line or product to the customer's Save-for-Later list (logged-in or guest).\n- **Read** the saved list and get a saved count.\n- **Remove** a single saved item or several at once.\n- **Cart Integration** — remove the original cart line after saving, and move a saved item back into the cart (Shopify AJAX).\n- **Analytics** — record a `savedForLater` event.\n\n> [!IMPORTANT] Always send wishlist_type: \"save_for_later\"\n> Save for Later reuses the Wishlist endpoints, so `wishlist_type` is the only thing that scopes a call to Save for Later. If you omit it on a read, count, or delete, the server falls back to the normal Wishlist (`wishlist_type in: [\"wishlist\"]`) and you operate on the wrong list. Spell it exactly `save_for_later` — all lowercase, underscores, no trailing \"d\".\n\n### Authentication\n\nEvery Flits API call needs the `Authorization: Bearer {{jwt_token}}` header and the `merchant_id` header, exactly like the other Wishlist APIs. The Shopify AJAX cart calls (`/cart.js`, `/cart/change.js`, `/cart/add.js`) are same-origin storefront requests and take no Flits authentication.\n\n### Logged-in vs guest\n\n- **Logged-in:** identify the shopper with `customer_email` and `shopify_customer_id`.\n- **Guest:** set `is_guest: true` and identify the shopper with `guest_browser_id` — do not send a Shopify customer ID for a guest.",
+          "item": [
+            {
+              "name": "Save",
+              "description": "## Save\n\nAdd a product to the customer's Save-for-Later list. Reuses the Wishlist **actions** endpoint (`POST /core/wishlist/actions`) with `operation: \"create\"` and `wishlist_type: \"save_for_later\"`.\n\nTypical storefront flow: the shopper clicks \"Save for later\" on a cart line, you POST the item here, then remove the original cart line with the Shopify AJAX call in **Cart Integration**.",
+              "item": [
+                {
+                  "name": "Add to Save for Later (Logged-in)",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "merchant_id",
+                        "value": "{{merchant_id}}"
+                      },
+                      {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"create\",\n        \"action\": \"wishlisted\",\n        \"is_guest\": false,\n        \"customer_email\": \"{{customer_email}}\",\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"product_id\": {{product_id}},\n        \"variant_id\": {{variant_id}},\n        \"product_handle\": \"{{product_handle}}\",\n        \"product_title\": \"{{product_title}}\",\n        \"variant_title\": \"{{variant_title}}\",\n        \"product_image\": \"{{product_image}}\",\n        \"price\": {{price}},\n        \"wishlist_type\": \"save_for_later\",\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                      "protocol": "https",
+                      "host": [
+                        "wishlist",
+                        "getflits",
+                        "com"
+                      ],
+                      "path": [
+                        "core",
+                        "wishlist",
+                        "actions"
+                      ]
+                    },
+                    "description": "## Add to Save for Later (Logged-in)\n\nSaves a product to a signed-in customer's Save-for-Later list.\n\n**Endpoint (reused):** `POST /core/wishlist/actions`\n\nThe request body is a JSON **array** of one or more items. Each item uses `operation: \"create\"`, `action: \"wishlisted\"`, and must carry `\"wishlist_type\": \"save_for_later\"` (and `\"page_type\": \"save_for_later\"`).\n\n### Identify the customer\n\n| Field | Value |\n| --- | --- |\n| `is_guest` | `false` |\n| `customer_email` | `{{customer_email}}` |\n| `shopify_customer_id` | `{{shopify_customer_id}}` |\n\n> [!IMPORTANT] wishlist_type and product identifiers are required\n> Without `\"wishlist_type\": \"save_for_later\"` the item is saved to the customer's **normal Wishlist**, not Save for Later. `product_id` and `variant_id` are also required — a create without them returns `400` with a per-item validation error.\n\n### Response\n\nReturns `201 Created` with a per-item `results` array (`status: \"success\"`). Saving the same product again succeeds without creating a duplicate."
+                  },
+                  "response": [
+                    {
+                      "name": "201 Created — Item Saved",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"create\",\n        \"action\": \"wishlisted\",\n        \"is_guest\": false,\n        \"customer_email\": \"{{customer_email}}\",\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"product_id\": {{product_id}},\n        \"variant_id\": {{variant_id}},\n        \"product_handle\": \"{{product_handle}}\",\n        \"product_title\": \"{{product_title}}\",\n        \"variant_title\": \"{{variant_title}}\",\n        \"product_image\": \"{{product_image}}\",\n        \"price\": {{price}},\n        \"wishlist_type\": \"save_for_later\",\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "actions"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"bulk_action_id\": null,\n  \"errors\": [],\n  \"failed\": 0,\n  \"results\": [\n    {\n      \"operation\": \"create\",\n      \"result\": {\n        \"action\": \"wishlisted\",\n        \"added_as_guest\": false,\n        \"added_from_page\": \"product_page\",\n        \"client_metadata\": \"{\\\"user_agent\\\":\\\"curl/8.4.0\\\"}\",\n        \"created_at\": \"2026-09-23T17:59:40Z\",\n        \"customer_id\": 2,\n        \"id\": 138,\n        \"is_bulk\": false,\n        \"price_at_wishlist_add\": 10,\n        \"product_id\": 8578576122005,\n        \"shopify_customer_id\": 431329869867,\n        \"updated_at\": \"2026-09-23T17:59:40Z\",\n        \"variant_id\": 45310633214101,\n        \"wishlist_type\": \"save_for_later\"\n      },\n      \"status\": \"success\"\n    }\n  ],\n  \"successful\": 1,\n  \"total_items\": 1\n}"
+                    },
+                    {
+                      "name": "400 Bad Request — Missing product_id / variant_id",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"create\",\n        \"action\": \"wishlisted\",\n        \"is_guest\": false,\n        \"customer_email\": \"{{customer_email}}\",\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"product_id\": {{product_id}},\n        \"variant_id\": {{variant_id}},\n        \"product_handle\": \"{{product_handle}}\",\n        \"product_title\": \"{{product_title}}\",\n        \"variant_title\": \"{{variant_title}}\",\n        \"product_image\": \"{{product_image}}\",\n        \"price\": {{price}},\n        \"wishlist_type\": \"save_for_later\",\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "actions"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"bulk_action_id\": null,\n  \"errors\": [\n    \"Item 0: validation failed: validation failed: product_id is required, variant_id is required\"\n  ],\n  \"failed\": 1,\n  \"results\": [\n    {\n      \"error\": \"validation failed: validation failed: product_id is required, variant_id is required\",\n      \"operation\": \"create\",\n      \"status\": \"error\"\n    }\n  ],\n  \"successful\": 0,\n  \"total_items\": 1\n}"
+                    },
+                    {
+                      "name": "400 Bad Request — Empty List",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"create\",\n        \"action\": \"wishlisted\",\n        \"is_guest\": false,\n        \"customer_email\": \"{{customer_email}}\",\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"product_id\": {{product_id}},\n        \"variant_id\": {{variant_id}},\n        \"product_handle\": \"{{product_handle}}\",\n        \"product_title\": \"{{product_title}}\",\n        \"variant_title\": \"{{variant_title}}\",\n        \"product_image\": \"{{product_image}}\",\n        \"price\": {{price}},\n        \"wishlist_type\": \"save_for_later\",\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "actions"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"error\": \"empty input list\"\n}"
+                    },
+                    {
+                      "name": "400 Bad Request — Body Must Be an Array",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"create\",\n        \"action\": \"wishlisted\",\n        \"is_guest\": false,\n        \"customer_email\": \"{{customer_email}}\",\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"product_id\": {{product_id}},\n        \"variant_id\": {{variant_id}},\n        \"product_handle\": \"{{product_handle}}\",\n        \"product_title\": \"{{product_title}}\",\n        \"variant_title\": \"{{variant_title}}\",\n        \"product_image\": \"{{product_image}}\",\n        \"price\": {{price}},\n        \"wishlist_type\": \"save_for_later\",\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "actions"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"error\": \"invalid input format: expected array\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Add to Save for Later (Guest)",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "merchant_id",
+                        "value": "{{merchant_id}}"
+                      },
+                      {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"create\",\n        \"action\": \"wishlisted\",\n        \"is_guest\": true,\n        \"guest_browser_id\": \"{{guest_browser_id}}\",\n        \"product_id\": {{product_id}},\n        \"variant_id\": {{variant_id}},\n        \"product_handle\": \"{{product_handle}}\",\n        \"product_title\": \"{{product_title}}\",\n        \"variant_title\": \"{{variant_title}}\",\n        \"product_image\": \"{{product_image}}\",\n        \"price\": {{price}},\n        \"wishlist_type\": \"save_for_later\",\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                      "protocol": "https",
+                      "host": [
+                        "wishlist",
+                        "getflits",
+                        "com"
+                      ],
+                      "path": [
+                        "core",
+                        "wishlist",
+                        "actions"
+                      ]
+                    },
+                    "description": "## Add to Save for Later (Guest)\n\nSaves a product for a shopper who is not logged in.\n\n**Endpoint (reused):** `POST /core/wishlist/actions`\n\nIdentical to the logged-in save, except the shopper is identified by a browser-generated guest id.\n\n| Field | Value |\n| --- | --- |\n| `is_guest` | `true` |\n| `guest_browser_id` | `{{guest_browser_id}}` |\n\n> [!IMPORTANT] Do not send a Shopify customer ID for a guest\n> Guests are identified only by `guest_browser_id`. Omit `customer_email` and `shopify_customer_id`. After the shopper logs in, their guest saves can be merged into their account using the standard Wishlist guest-to-customer flow.\n\nReturns `201 Created`; the saved record echoes `added_as_guest: true` and the `guest_browser_id`."
+                  },
+                  "response": [
+                    {
+                      "name": "201 Created — Item Saved (Guest)",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"create\",\n        \"action\": \"wishlisted\",\n        \"is_guest\": true,\n        \"guest_browser_id\": \"{{guest_browser_id}}\",\n        \"product_id\": {{product_id}},\n        \"variant_id\": {{variant_id}},\n        \"product_handle\": \"{{product_handle}}\",\n        \"product_title\": \"{{product_title}}\",\n        \"variant_title\": \"{{variant_title}}\",\n        \"product_image\": \"{{product_image}}\",\n        \"price\": {{price}},\n        \"wishlist_type\": \"save_for_later\",\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "actions"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"bulk_action_id\": null,\n  \"errors\": [],\n  \"failed\": 0,\n  \"results\": [\n    {\n      \"operation\": \"create\",\n      \"result\": {\n        \"action\": \"wishlisted\",\n        \"added_as_guest\": true,\n        \"added_from_page\": \"product_page\",\n        \"client_metadata\": \"{\\\"user_agent\\\":\\\"curl/8.4.0\\\"}\",\n        \"created_at\": \"2026-09-23T18:00:18Z\",\n        \"customer_id\": 32,\n        \"guest_browser_id\": \"guest-browser-id-example\",\n        \"id\": 139,\n        \"is_bulk\": false,\n        \"price_at_wishlist_add\": 10,\n        \"product_id\": 8578576122005,\n        \"updated_at\": \"2026-09-23T18:00:18Z\",\n        \"variant_id\": 45310633214101,\n        \"wishlist_type\": \"save_for_later\"\n      },\n      \"status\": \"success\"\n    }\n  ],\n  \"successful\": 1,\n  \"total_items\": 1\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Read",
+              "description": "## Read\n\nRetrieve the customer's Save-for-Later items and count. Both reuse the Wishlist **items/query** endpoint (`POST /core/wishlist/items/query`) with `\"wishlist_type\": \"save_for_later\"` inside `filters`.",
+              "item": [
+                {
+                  "name": "Get Saved-for-Later List",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "merchant_id",
+                        "value": "{{merchant_id}}"
+                      },
+                      {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"merchant_id\": \"{{merchant_id}}\",\n    \"filters\": {\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"deleted_at\": null,\n        \"action in\": [\"wishlisted\", \"admin_wishlisted\", \"purchased\"],\n        \"wishlist_type\": \"save_for_later\"\n    },\n    \"options\": {\n        \"limit\": 10,\n        \"use_cache\": false,\n        \"sort_field\": \"updated_at\",\n        \"sort_direction\": \"DESC\"\n    }\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://wishlist.getflits.com/core/wishlist/items/query",
+                      "protocol": "https",
+                      "host": [
+                        "wishlist",
+                        "getflits",
+                        "com"
+                      ],
+                      "path": [
+                        "core",
+                        "wishlist",
+                        "items",
+                        "query"
+                      ]
+                    },
+                    "description": "## Get Saved-for-Later List\n\nReturns the customer's Save-for-Later items, newest first.\n\n**Endpoint (reused):** `POST /core/wishlist/items/query`\n\nSet `filters.wishlist_type` to `\"save_for_later\"` and identify the customer with `shopify_customer_id` (logged-in) or `guest_browser_id` (guest). Use `options.limit`, `options.sort_field`, and `options.sort_direction` to page and order results. The items are in `data`; `total_items_count` and `pagination` describe the full result set.\n\n> [!IMPORTANT] Omitting wishlist_type returns the normal Wishlist\n> A query without `filters.wishlist_type` defaults to `wishlist_type in: [\"wishlist\"]` and returns the customer's regular Wishlist, not their saved items. The \"wishlist_type omitted\" example below is a real response showing this fallback return an empty Save-for-Later result."
+                  },
+                  "response": [
+                    {
+                      "name": "200 OK — Items Found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"merchant_id\": \"{{merchant_id}}\",\n    \"filters\": {\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"deleted_at\": null,\n        \"action in\": [\"wishlisted\", \"admin_wishlisted\", \"purchased\"],\n        \"wishlist_type\": \"save_for_later\"\n    },\n    \"options\": {\n        \"limit\": 10,\n        \"use_cache\": false,\n        \"sort_field\": \"updated_at\",\n        \"sort_direction\": \"DESC\"\n    }\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/items/query",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "items",
+                            "query"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"data\": [\n    {\n      \"action\": \"wishlisted\",\n      \"added_as_guest\": 0,\n      \"added_from_page\": \"product_page\",\n      \"admin_id\": null,\n      \"back_in_stock_notify_me\": false,\n      \"back_in_stock_notify_me_count\": 0,\n      \"bulk_action_id\": null,\n      \"client_metadata\": \"{\\\"user_agent\\\":\\\"curl/8.4.0\\\"}\",\n      \"created_at\": \"2026-09-23 17:59:40\",\n      \"customer_id\": 2,\n      \"deleted_at\": \"0000-00-00 00:00:00\",\n      \"guest_browser_id\": null,\n      \"id\": 138,\n      \"is_bought\": 0,\n      \"is_bulk\": 0,\n      \"is_in_stock\": 0,\n      \"order_id\": null,\n      \"price_at_purchase\": null,\n      \"price_at_wishlist_add\": \"10.00\",\n      \"product_handle\": \"gift-card\",\n      \"product_id\": 8578576122005,\n      \"product_image\": \"https://cdn.shopify.com/s/files/1/0673/3106/3957/files/gift_card.png\",\n      \"product_title\": \"Gift Card\",\n      \"purchase_total\": null,\n      \"purchased_at\": null,\n      \"quantity\": 1,\n      \"reminded_at\": null,\n      \"shopify_customer_id\": 431329869867,\n      \"updated_at\": \"2026-09-23 17:59:40\",\n      \"variant_id\": 45310633214101,\n      \"variant_title\": \"$10\",\n      \"wishlist_type\": \"save_for_later\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"has_next_page\": false,\n    \"has_previous_page\": false,\n    \"next_page\": null,\n    \"offset\": 0,\n    \"per_page\": 10,\n    \"previous_page\": null,\n    \"total_count\": 1,\n    \"total_pages\": 1\n  },\n  \"status_code\": \"success\",\n  \"total_items_count\": 1\n}"
+                    },
+                    {
+                      "name": "200 OK — Empty List",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"merchant_id\": \"{{merchant_id}}\",\n    \"filters\": {\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"deleted_at\": null,\n        \"action in\": [\"wishlisted\", \"admin_wishlisted\", \"purchased\"],\n        \"wishlist_type\": \"save_for_later\"\n    },\n    \"options\": {\n        \"limit\": 10,\n        \"use_cache\": false,\n        \"sort_field\": \"updated_at\",\n        \"sort_direction\": \"DESC\"\n    }\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/items/query",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "items",
+                            "query"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"data\": [],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"has_next_page\": false,\n    \"has_previous_page\": false,\n    \"next_page\": null,\n    \"offset\": 0,\n    \"per_page\": 10,\n    \"previous_page\": null,\n    \"total_count\": 0,\n    \"total_pages\": 0\n  },\n  \"status_code\": \"success\",\n  \"total_items_count\": 0\n}"
+                    },
+                    {
+                      "name": "200 OK — wishlist_type Omitted (Falls Back to Wishlist)",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"merchant_id\": \"{{merchant_id}}\",\n    \"filters\": {\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"deleted_at\": null,\n        \"action in\": [\"wishlisted\", \"admin_wishlisted\", \"purchased\"],\n        \"wishlist_type\": \"save_for_later\"\n    },\n    \"options\": {\n        \"limit\": 10,\n        \"use_cache\": false,\n        \"sort_field\": \"updated_at\",\n        \"sort_direction\": \"DESC\"\n    }\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/items/query",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "items",
+                            "query"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"data\": [],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"has_next_page\": false,\n    \"has_previous_page\": false,\n    \"next_page\": null,\n    \"offset\": 0,\n    \"per_page\": 10,\n    \"previous_page\": null,\n    \"total_count\": 0,\n    \"total_pages\": 0\n  },\n  \"status_code\": \"success\",\n  \"total_items_count\": 0\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Get Saved-for-Later Count",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "merchant_id",
+                        "value": "{{merchant_id}}"
+                      },
+                      {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"merchant_id\": \"{{merchant_id}}\",\n    \"filters\": {\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"deleted_at\": null,\n        \"action in\": [\"wishlisted\", \"admin_wishlisted\", \"purchased\"],\n        \"wishlist_type\": \"save_for_later\"\n    },\n    \"options\": {\n        \"limit\": 1,\n        \"use_cache\": false\n    }\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://wishlist.getflits.com/core/wishlist/items/query",
+                      "protocol": "https",
+                      "host": [
+                        "wishlist",
+                        "getflits",
+                        "com"
+                      ],
+                      "path": [
+                        "core",
+                        "wishlist",
+                        "items",
+                        "query"
+                      ]
+                    },
+                    "description": "## Get Saved-for-Later Count\n\nReturns how many items are in the customer's Save-for-Later list.\n\n**Endpoint (reused):** `POST /core/wishlist/items/query`\n\nThis is the same query as **Get Saved-for-Later List** with `options.limit` set to `1` — read the count from `total_items_count` (and `pagination.total_count`) rather than the `data` array. Keep `\"wishlist_type\": \"save_for_later\"` in `filters`."
+                  },
+                  "response": [
+                    {
+                      "name": "200 OK — Count",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"merchant_id\": \"{{merchant_id}}\",\n    \"filters\": {\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"deleted_at\": null,\n        \"action in\": [\"wishlisted\", \"admin_wishlisted\", \"purchased\"],\n        \"wishlist_type\": \"save_for_later\"\n    },\n    \"options\": {\n        \"limit\": 1,\n        \"use_cache\": false\n    }\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/items/query",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "items",
+                            "query"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"data\": [\n    {\n      \"action\": \"wishlisted\",\n      \"added_as_guest\": 0,\n      \"added_from_page\": \"product_page\",\n      \"admin_id\": null,\n      \"back_in_stock_notify_me\": false,\n      \"back_in_stock_notify_me_count\": 0,\n      \"bulk_action_id\": null,\n      \"client_metadata\": \"{\\\"user_agent\\\":\\\"curl/8.4.0\\\"}\",\n      \"created_at\": \"2026-09-23 17:59:40\",\n      \"customer_id\": 2,\n      \"deleted_at\": \"0000-00-00 00:00:00\",\n      \"guest_browser_id\": null,\n      \"id\": 138,\n      \"is_bought\": 0,\n      \"is_bulk\": 0,\n      \"is_in_stock\": 0,\n      \"order_id\": null,\n      \"price_at_purchase\": null,\n      \"price_at_wishlist_add\": \"10.00\",\n      \"product_handle\": \"gift-card\",\n      \"product_id\": 8578576122005,\n      \"product_image\": \"https://cdn.shopify.com/s/files/1/0673/3106/3957/files/gift_card.png\",\n      \"product_title\": \"Gift Card\",\n      \"purchase_total\": null,\n      \"purchased_at\": null,\n      \"quantity\": 1,\n      \"reminded_at\": null,\n      \"shopify_customer_id\": 431329869867,\n      \"updated_at\": \"2026-09-23 17:59:40\",\n      \"variant_id\": 45310633214101,\n      \"variant_title\": \"$10\",\n      \"wishlist_type\": \"save_for_later\"\n    }\n  ],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"has_next_page\": false,\n    \"has_previous_page\": false,\n    \"next_page\": null,\n    \"offset\": 0,\n    \"per_page\": 1,\n    \"previous_page\": null,\n    \"total_count\": 1,\n    \"total_pages\": 1\n  },\n  \"status_code\": \"success\",\n  \"total_items_count\": 1\n}"
+                    },
+                    {
+                      "name": "200 OK — Empty",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"merchant_id\": \"{{merchant_id}}\",\n    \"filters\": {\n        \"shopify_customer_id\": {{shopify_customer_id}},\n        \"deleted_at\": null,\n        \"action in\": [\"wishlisted\", \"admin_wishlisted\", \"purchased\"],\n        \"wishlist_type\": \"save_for_later\"\n    },\n    \"options\": {\n        \"limit\": 1,\n        \"use_cache\": false\n    }\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/items/query",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "items",
+                            "query"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"data\": [],\n  \"pagination\": {\n    \"current_page\": 1,\n    \"has_next_page\": false,\n    \"has_previous_page\": false,\n    \"next_page\": null,\n    \"offset\": 0,\n    \"per_page\": 1,\n    \"previous_page\": null,\n    \"total_count\": 0,\n    \"total_pages\": 0\n  },\n  \"status_code\": \"success\",\n  \"total_items_count\": 0\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Remove",
+              "description": "## Remove\n\nRemove items from the customer's Save-for-Later list. Reuses the Wishlist **actions** endpoint with `operation: \"delete\"` and `\"wishlist_type\": \"save_for_later\"` in the filters.",
+              "item": [
+                {
+                  "name": "Remove Saved-for-Later Item",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "merchant_id",
+                        "value": "{{merchant_id}}"
+                      },
+                      {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"delete\",\n        \"filters\": {\n            \"product_id\": {{product_id}},\n            \"variant_id\": {{variant_id}},\n            \"shopify_customer_id\": {{shopify_customer_id}},\n            \"wishlist_type\": \"save_for_later\"\n        },\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                      "protocol": "https",
+                      "host": [
+                        "wishlist",
+                        "getflits",
+                        "com"
+                      ],
+                      "path": [
+                        "core",
+                        "wishlist",
+                        "actions"
+                      ]
+                    },
+                    "description": "## Remove Saved-for-Later Item\n\nRemoves one product from the customer's Save-for-Later list.\n\n**Endpoint (reused):** `POST /core/wishlist/actions`\n\nSend a one-element array with `operation: \"delete\"` and a `filters` object identifying the item (`product_id`, `variant_id`, the customer, and `\"wishlist_type\": \"save_for_later\"`).\n\n> [!IMPORTANT] Scope the delete to save_for_later\n> The `wishlist_type` filter must be `\"save_for_later\"`, otherwise the delete targets the customer's normal Wishlist. The call is idempotent: removing an item that is already gone still returns `201` with `deleted_count: 0`."
+                  },
+                  "response": [
+                    {
+                      "name": "201 Created — Item Removed",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"delete\",\n        \"filters\": {\n            \"product_id\": {{product_id}},\n            \"variant_id\": {{variant_id}},\n            \"shopify_customer_id\": {{shopify_customer_id}},\n            \"wishlist_type\": \"save_for_later\"\n        },\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "actions"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"bulk_action_id\": null,\n  \"errors\": [],\n  \"failed\": 0,\n  \"results\": [\n    {\n      \"deleted_count\": 1,\n      \"operation\": \"delete\",\n      \"status\": \"success\"\n    }\n  ],\n  \"successful\": 1,\n  \"total_items\": 1\n}"
+                    },
+                    {
+                      "name": "201 Created — Item Not Found (Idempotent)",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"delete\",\n        \"filters\": {\n            \"product_id\": {{product_id}},\n            \"variant_id\": {{variant_id}},\n            \"shopify_customer_id\": {{shopify_customer_id}},\n            \"wishlist_type\": \"save_for_later\"\n        },\n        \"page_type\": \"save_for_later\"\n    }\n]",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "actions"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"bulk_action_id\": null,\n  \"errors\": [],\n  \"failed\": 0,\n  \"results\": [\n    {\n      \"deleted_count\": 0,\n      \"operation\": \"delete\",\n      \"status\": \"success\"\n    }\n  ],\n  \"successful\": 1,\n  \"total_items\": 1\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Bulk Remove Saved-for-Later Items",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "merchant_id",
+                        "value": "{{merchant_id}}"
+                      },
+                      {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"delete\",\n        \"filters\": {\n            \"product_id\": {{product_id}},\n            \"variant_id\": {{variant_id}},\n            \"shopify_customer_id\": {{shopify_customer_id}},\n            \"wishlist_type\": \"save_for_later\"\n        }\n    },\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"delete\",\n        \"filters\": {\n            \"product_id\": 123456789,\n            \"variant_id\": 48839773520149,\n            \"shopify_customer_id\": {{shopify_customer_id}},\n            \"wishlist_type\": \"save_for_later\"\n        }\n    }\n]",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                      "protocol": "https",
+                      "host": [
+                        "wishlist",
+                        "getflits",
+                        "com"
+                      ],
+                      "path": [
+                        "core",
+                        "wishlist",
+                        "actions"
+                      ]
+                    },
+                    "description": "## Bulk Remove Saved-for-Later Items\n\nRemoves several Save-for-Later items in one request.\n\n**Endpoint (reused):** `POST /core/wishlist/actions`\n\nSend an array of `operation: \"delete\"` objects, one per item, each with its own `filters` (including `\"wishlist_type\": \"save_for_later\"`). Each item is processed independently: the response `results` array reports a `deleted_count` per entry, and items that are not found simply report `deleted_count: 0` rather than failing the whole batch. A bulk call also returns a `bulk_action_id`."
+                  },
+                  "response": [
+                    {
+                      "name": "201 Created — Bulk Result",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "merchant_id",
+                            "value": "{{merchant_id}}"
+                          },
+                          {
+                            "key": "Authorization",
+                            "value": "Bearer {{jwt_token}}"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "[\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"delete\",\n        \"filters\": {\n            \"product_id\": {{product_id}},\n            \"variant_id\": {{variant_id}},\n            \"shopify_customer_id\": {{shopify_customer_id}},\n            \"wishlist_type\": \"save_for_later\"\n        }\n    },\n    {\n        \"merchant_id\": \"{{merchant_id}}\",\n        \"operation\": \"delete\",\n        \"filters\": {\n            \"product_id\": 123456789,\n            \"variant_id\": 48839773520149,\n            \"shopify_customer_id\": {{shopify_customer_id}},\n            \"wishlist_type\": \"save_for_later\"\n        }\n    }\n]",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "https://wishlist.getflits.com/core/wishlist/actions",
+                          "protocol": "https",
+                          "host": [
+                            "wishlist",
+                            "getflits",
+                            "com"
+                          ],
+                          "path": [
+                            "core",
+                            "wishlist",
+                            "actions"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"bulk_action_id\": 1790186488476238800,\n  \"errors\": [],\n  \"failed\": 0,\n  \"results\": [\n    {\n      \"deleted_count\": 1,\n      \"operation\": \"delete\",\n      \"status\": \"success\"\n    },\n    {\n      \"deleted_count\": 0,\n      \"operation\": \"delete\",\n      \"status\": \"success\"\n    }\n  ],\n  \"successful\": 2,\n  \"total_items\": 2\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Cart Integration",
+              "description": "## Cart Integration\n\nThese are **Shopify storefront AJAX calls**, not Flits APIs. They run in the shopper's browser on your storefront (same-origin) and take **no** `Authorization` or `merchant_id` header. Use them to complete the Save-for-Later experience around the Flits save/remove calls.\n\n| Call | Purpose |\n| --- | --- |\n| `GET /cart.js` | Read the current cart and find a line's `key`. |\n| `POST /cart/change.js` | Remove the original cart line after saving it (set `quantity: 0`). |\n| `POST /cart/add.js` | Move a saved item back into the cart. |\n\n> [!IMPORTANT] Browser-side; storefront session required\n> Because these are same-origin Shopify AJAX endpoints tied to the shopper's cart cookie, they cannot be exercised from a server or through Try It against a password-protected storefront — they are meant to run in the storefront browser. Use `{{shop_domain}}` for the store and a `{{cart_line_key}}` obtained from a fresh `GET /cart.js`.",
+              "item": [
+                {
+                  "name": "Resolve Cart Line Key",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "https://{{shop_domain}}/cart.js",
+                      "protocol": "https",
+                      "host": [
+                        "{{shop_domain}}"
+                      ],
+                      "path": [
+                        "cart.js"
+                      ]
+                    },
+                    "description": "## Resolve Cart Line Key\n\nReads the shopper's current cart so you can find the line `key` to remove after saving.\n\n**Shopify AJAX:** `GET https://{{shop_domain}}/cart.js`\n\nReturns the cart JSON. Each entry in `items[]` has a `key` — pass that value as `{{cart_line_key}}` to **Remove Cart Line After Save**. No Flits authentication is used.\n\n> [!IMPORTANT] Runs in the storefront browser\n> This is a same-origin Shopify request. It cannot be tested server-side or against a password-protected store (it redirects to `/password`); call it from the storefront in the customer's session."
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Remove Cart Line After Save",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"id\": \"{{cart_line_key}}\",\n    \"quantity\": 0\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://{{shop_domain}}/cart/change.js",
+                      "protocol": "https",
+                      "host": [
+                        "{{shop_domain}}"
+                      ],
+                      "path": [
+                        "cart",
+                        "change.js"
+                      ]
+                    },
+                    "description": "## Remove Cart Line After Save\n\nRemoves the original cart line once the item has been saved for later, by setting its quantity to `0`.\n\n**Shopify AJAX:** `POST https://{{shop_domain}}/cart/change.js`\n\nBody: `{ \"id\": \"{{cart_line_key}}\", \"quantity\": 0 }`, where `{{cart_line_key}}` comes from **Resolve Cart Line Key**. Returns the updated cart JSON. No Flits authentication is used."
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Move to Cart",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"items\": [\n        {\n            \"id\": {{variant_id}},\n            \"quantity\": 1\n        }\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://{{shop_domain}}/cart/add.js",
+                      "protocol": "https",
+                      "host": [
+                        "{{shop_domain}}"
+                      ],
+                      "path": [
+                        "cart",
+                        "add.js"
+                      ]
+                    },
+                    "description": "## Move to Cart\n\nMoves a saved item back into the cart.\n\n**Shopify AJAX:** `POST https://{{shop_domain}}/cart/add.js`\n\nBody: an `items` array of `{ \"id\": <variant_id>, \"quantity\": 1 }`. After adding to the cart, remove the item from Save for Later with **Remove Saved-for-Later Item**. No Flits authentication is used."
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "Analytics",
+              "description": "## Analytics\n\nRecord a Save-for-Later analytics event so saves appear in Flits reporting. Reuses the storefront analytics pipeline with `page_type` and `wishlist_type` set to `\"save_for_later\"`.",
+              "item": [
+                {
+                  "name": "Send Save-for-Later Analytics Event",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "merchant_id",
+                        "value": "{{merchant_id}}"
+                      },
+                      {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"status\": \"save_analytics_event\",\n    \"data\": {\n        \"action\": \"save_analytics_event\",\n        \"customer_id\": \"{{customer_id}}\",\n        \"customer_email\": \"{{customer_email}}\",\n        \"user_id\": \"{{customer_id}}\",\n        \"app_name\": \"flits_wishlist\",\n        \"token\": \"{{jwt_token}}\",\n        \"customer_hash\": \"{{customer_hash}}\",\n        \"timestamp\": \"2026-09-16T00:00:00.000Z\",\n        \"event_data\": [\n            {\n                \"data\": {\n                    \"event_name\": \"savedForLater\",\n                    \"dimensions\": {\n                        \"product_id\": {{product_id}},\n                        \"variant_id\": {{variant_id}},\n                        \"page_type\": \"save_for_later\",\n                        \"wishlist_type\": \"save_for_later\",\n                        \"is_guest\": false,\n                        \"customer_id\": \"{{customer_id}}\"\n                    },\n                    \"measures\": {\n                        \"count\": 1,\n                        \"price\": {{price}}\n                    }\n                }\n            }\n        ]\n    }\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://wishlist.getflits.com/api/storefront/analytics-event?firehose_type=wishlist",
+                      "protocol": "https",
+                      "host": [
+                        "wishlist",
+                        "getflits",
+                        "com"
+                      ],
+                      "path": [
+                        "api",
+                        "storefront",
+                        "analytics-event"
+                      ],
+                      "query": [
+                        {
+                          "key": "firehose_type",
+                          "value": "wishlist"
+                        }
+                      ]
+                    },
+                    "description": "## Send Save-for-Later Analytics Event\n\nRecords a `savedForLater` analytics event for reporting.\n\n**Endpoint:** `POST /api/storefront/analytics-event?firehose_type=wishlist`\n\nThe event carries `event_name: \"savedForLater\"` with `page_type: \"save_for_later\"` and `wishlist_type: \"save_for_later\"` in `dimensions`, plus product/variant, customer information, and a `measures` block (`count`, `price`). Include the `Authorization` and `merchant_id` headers like other Flits calls.\n\n> [!IMPORTANT] Preserve the save_for_later values\n> Keep both `page_type` and `wishlist_type` set to `\"save_for_later\"` (no trailing \"d\") so the event is attributed to Save for Later rather than the normal Wishlist.\n\n> [!IMPORTANT] Endpoint availability observed during testing\n> When this documentation was prepared, live calls to `POST /api/storefront/analytics-event` on `wishlist.getflits.com` returned `503 Service Unavailable` (empty body), while the wishlist read/write endpoints on the same host returned `200`. No success response could be captured, so no success example is shown below. Confirm this endpoint's host and availability for your environment before relying on it."
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
         }
       ],
-      "description": "## Flits Wishlist\n\nThis collection provides everything a third-party developer needs to integrate with the **Flits Wishlist** for Shopify merchants. It covers customer wishlist management, analytics event tracking, and guest-to-customer session linking.\n\n**Base URL — Wishlist Core:** `https://wishlist.getflits.com`  \n**Base URL — Analytics Events:** `https://analytics.getflits.com`\n\n---\n\n## Getting Started\n\nFollow these four steps to make your first successful API call.\n\n### Step 1 — Obtain Your Credentials\n\nContact the **Flits team** to receive:\n\n| Credential | Description |\n| --- | --- |\n| `jwt_token` | This will be provided by Flits Team. |\n| `merchant_id` | This will be provided by Flits Team. |\n\nKeep these values secure. Do not expose them in client-side code or public repositories.\n\n---\n\n### Step 2 — Set Up Your Environment\n\nThis documentation uses environment variables so you never have to hard-code credentials. Set the following variables in the **Environment Variables** panel:\n\n| Variable | Example Value | Description |\n| --- | --- | --- |\n| `wishlist_base_url` | `https://wishlist.getflits.com` | Base URL for Wishlist Core endpoints. |\n| `analytics_base_url` | `https://analytics.getflits.com` | Base URL for Analytics Events endpoints. |\n| `jwt_token` | `eyJhbGci...` | This will be provided by Flits Team. |\n| `merchant_id` | `12345` | This will be provided by Flits Team. |\n| `shopify_customer_id` | `6789012345` | The Shopify customer ID you are operating on. |\n\nEvery request in this collection references these variables using the `{{variable_name}}` syntax — update them once and all requests stay in sync.\n\n---\n\n### Step 3 — Make Your First API Call\n\nThe simplest way to verify your setup is to call **Add to Wishlist**.\n\n**Request:**\n\n```\nPOST {{wishlist_base_url}}/core/wishlist/actions\n\n ```\n\n**Headers:**\n\n```\nContent-Type:  application/json\nAuthorization: Bearer {{jwt_token}}\nmerchant_id:   {{merchant_id}}\n\n ```\n\n**Body:**\n\n``` antlr4\n[\n  {\n    \"merchant_id\": \"{{merchant_id}}\",\n    \"operation\": \"create\",\n    \"action\": \"wishlisted\",\n    \"is_guest\": false,\n    \"customer_email\": \"{{customer_email}}\",\n    \"product_id\": {{product_id}},\n    \"variant_id\": {{variant_id}},\n    \"product_handle\": \"{{product_handle}}\",\n    \"product_title\": \"{{product_title}}\",\n    \"variant_title\": \"{{variant_title}}\",\n    \"product_image\": \"{{product_image}}\",\n    \"sku\": \"{{sku}}\",\n    \"product_type\": \"{{product_type}}\",\n    \"price\": {{price}},\n    \"inventory_count\": {{inventory_count}}\n  }\n]\n\n ```\n\nOpen the **Add to Wishlist** request in the **Wishlist Core** folder, ensure your environment is selected, and click **Send**.\n\n---\n\n### Step 4 — Verify the Response\n\nA successful response returns HTTP `201` with a JSON body confirming the item was added:\n\n``` json\n{\n  \"status\": true,\n  \"message\": \"Item added to wishlist successfully.\",\n  \"data\": { ... }\n}\n\n ```\n\nIf you receive a `401 Unauthorized`, double-check that your `jwt_token` and `merchant_id` environment variables are set correctly and that the token has not expired.\n\n---\n\n## Authentication & Configuration\n\nAll endpoints in this collection require the following headers on every request:\n\n| Header | Value | Required | Description |\n| --- | --- | --- | --- |\n| `Content-Type` | `application/json` | Yes | All request bodies must be JSON. |\n| `Authorization` | `Bearer {{jwt_token}}` | Yes | This will be provided by Flits Team. |\n| `merchant_id` | `{{merchant_id}}` | Yes | This will be provided by Flits Team. |\n\n> **Note:** `{{jwt_token}}` and `{{merchant_id}}` above are environment variable placeholders. Replace them with your actual credentials when making requests. \n  \n> [!IMPORTANT] All three headers are required on every request\n> `Authorization: Bearer {{jwt_token}}`, `merchant_id`, and `Content-Type` must be present on every Wishlist API call.\n> The JWT token and merchant ID are issued by the Flits team. Configure them once under **Environment Variables** and they are applied automatically across all requests.\n  \n\n### JWT Token\n\nThis will be provided by Flits Team.\n\n---\n\n## Environment Matrix\n\n| Environment | `wishlist_base_url` | `analytics_base_url` | Notes |\n| --- | --- | --- | --- |\n| **Production** | `https://wishlist.getflits.com` | `https://analytics.getflits.com` | Live merchant data. Use with caution. |\n| **Sandbox** | _(not available)_ | _(not available)_ | A sandbox environment is not currently offered. All testing should be done against production with test merchant credentials provided by the Flits team. |\n\n> If a sandbox environment becomes available, this table will be updated and a changelog entry will be added. \n  \n\n---\n\n## API Groups\n\n| Group | Base URL Variable | Description |\n| --- | --- | --- |\n| **Wishlist Core** | `{{wishlist_base_url}}` | Add, remove, query wishlist items, and link guest customers. |\n| **Analytics Events** | `{{analytics_base_url}}` | Track wishlist button clicks and add-to-cart events. |\n| **Wishlist Share and Manage Collections** | `{{wishlist_base_url}}` | Manage wishlist collections, share a wishlist or collection, serve the shared page, and run collection-scoped item queries. |\n\n> **Note:** `{{wishlist_base_url}}` resolves to `https://wishlist.getflits.com` and `{{analytics_base_url}}` resolves to `https://analytics.getflits.com` once the environment variables are configured. \n  \n\n---\n\n## Data Model Glossary\n\nThe following identifiers appear across multiple endpoints. Understanding the distinction between them is critical for correct integration.\n\n| Field | Type | Description |\n| --- | --- | --- |\n| `merchant_id` | string | This will be provided by Flits Team. |\n| `shopify_customer_id` | string / number | The native Shopify customer ID (numeric). Identifies a logged-in, registered customer. Obtained from Shopify's customer object after authentication. |\n| `customer_id` | string | The internal Flits customer ID. Used in analytics event bodies and some response payloads. Not the same as `shopify_customer_id`. |\n| `guest_customer_id` | string | A temporary identifier assigned to a guest (unauthenticated) user session by the Flits platform. Used in the Link Guest endpoint to migrate a guest session to a Shopify customer account. |\n| `guest_browser_id` | string | A browser fingerprint or device identifier used to track guest sessions across page loads. Appears in response payloads only — not required in request bodies. |\n| `product_id` | number | The Shopify product ID. Identifies the parent product in the Shopify product hierarchy. |\n| `variant_id` | number | The Shopify product variant ID. Identifies a specific variant (e.g., size, colour) of a product. Both `product_id` and `variant_id` are required together to uniquely identify a wishlist item. |\n\n---\n\n## Rate Limiting & Error Handling\n\n### Rate Limits\n\nThere are currently **no enforced rate limits** on this API. However, we recommend:\n\n- Avoiding tight polling loops — use event-driven calls instead.\n    \n- Batching requests where possible to reduce unnecessary load.\n    \n\nRate limiting may be introduced in future versions. Check the changelog below for updates.\n\n### CORS, TLS & Payload Policy\n\n| Policy | Detail |\n| --- | --- |\n| **TLS** | TLS 1.2 or higher is required for all connections. Requests over plain HTTP will be rejected. |\n| **CORS** | CORS preflight (`OPTIONS`) requests are **not supported**. These APIs are designed for server-to-server integration only. Do not call them directly from browser-side JavaScript. |\n| **Max request body size** | There is no documented hard limit, but we recommend keeping individual request payloads under **1 MB**. For bulk wishlist operations, batch items into multiple requests if needed. |\n\n### Standard Error Response Format\n\nAll error responses follow a consistent JSON structure:\n\n``` json\n{\n  \"status\": false,\n  \"message\": \"A human-readable description of the error.\",\n  \"errors\": { }\n}\n\n ```\n\n### HTTP Status Code Reference\n\n| Status Code | Meaning | Common Cause |\n| --- | --- | --- |\n| `200` | OK | Request succeeded (used by query and analytics endpoints). |\n| `201` | Created | Resource successfully created (used by Add/Remove Wishlist). |\n| `400` | Bad Request | Missing or invalid request parameters. Check the `message` field. |\n| `401` | Unauthorized | Missing, invalid, or expired JWT token. |\n| `404` | Not Found | The requested resource does not exist (e.g., customer not found). |\n| `409` | Conflict | Duplicate operation (e.g., guest already linked to a Shopify customer). |\n\n### Support & Debugging\n\nWhen filing a support ticket with the Flits team, include the following in your report to enable fast diagnosis:\n\n| Field | Where to find it |\n| --- | --- |\n| `merchant_id` | This will be provided by Flits Team. |\n| `shopify_customer_id` | The customer ID used in the failing request body or filter. |\n| Timestamp (UTC) | The exact time the request was made. |\n| Request endpoint | The full URL and HTTP method. |\n| Response body | The full JSON error response returned by the API. |\n| HTTP status code | The status code returned (e.g., `401`, `400`). |\n\n> If the API returns an `x-request-id` response header, always include its value in your support ticket — it allows the Flits team to locate the exact server-side log entry for your request. \n  \n\n### Troubleshooting\n\n| Symptom | Likely Cause | Resolution |\n| --- | --- | --- |\n| `401 Unauthorized` | Token missing or expired | Verify `{{jwt_token}}` is set in your environment and has not expired. Contact Flits team to re-issue if needed. |\n| `400 Bad Request` | Missing required field | Read the `message` field in the response — it identifies the missing parameter. |\n| `404 Not Found` | Invalid customer ID | Confirm `{{shopify_customer_id}}` is a valid Shopify customer ID for this merchant. |\n| `409 Conflict` | Already linked | The guest session has already been linked to this Shopify customer. |\n| Empty wishlist response | No items added yet | This is expected — a `200` with an empty result set is not an error. |\n\n> **Note:** `{{jwt_token}}` and `{{shopify_customer_id}}` in the table above are environment variable placeholders — replace them with your actual values. \n  \n\n---\n\n## Webhooks\n\n> **Coming soon** — Webhook support for real-time wishlist event notifications (e.g., item added, item removed, guest linked) is on the Flits roadmap. See the changelog for updates when this feature is released. \n  \n\nWhen webhooks are available, they will allow your server to receive push notifications for wishlist events without polling the API.\n\n---\n\n## API Versioning & Changelog\n\n**Current Version:** `v1.1`\n\nFuture versions will be introduced via URL path prefixes (e.g., `/v2/core/wishlist/actions`) to maintain full backward compatibility. You will be notified of breaking changes in advance.\n\n### Changelog\n\n#### v1.1 — May 2026\n\n**Changed**\n\n- Collection variables introduced: `wishlist_base_url` and `analytics_base_url` replace hardcoded base URLs in all requests.\n    \n**Fixed**\n\n- Getting Started → Step 3 example body corrected to match the actual `Add to Wishlist` request structure (`operation: \"create\"`, flat body array, all required fields).\n    \n#### v1.0 — April 2026\n\n**Added**\n\n- Initial release — Wishlist Core (Add, Remove, Query, Link Guest) and Analytics Events (Button Click, Add to Cart).",
+      "description": "## Flits Wishlist\n\nThis collection provides everything a third-party developer needs to integrate with the **Flits Wishlist** for Shopify merchants. It covers customer wishlist management, analytics event tracking, and guest-to-customer session linking.\n\n**Base URL — Wishlist Core:** `https://wishlist.getflits.com`  \n**Base URL — Analytics Events:** `https://analytics.getflits.com`\n\n---\n\n## Getting Started\n\nFollow these four steps to make your first successful API call.\n\n### Step 1 — Obtain Your Credentials\n\nContact the **Flits team** to receive:\n\n| Credential | Description |\n| --- | --- |\n| `jwt_token` | This will be provided by Flits Team. |\n| `merchant_id` | This will be provided by Flits Team. |\n\nKeep these values secure. Do not expose them in client-side code or public repositories.\n\n---\n\n### Step 2 — Set Up Your Environment\n\nThis documentation uses environment variables so you never have to hard-code credentials. Set the following variables in the **Environment Variables** panel:\n\n| Variable | Example Value | Description |\n| --- | --- | --- |\n| `wishlist_base_url` | `https://wishlist.getflits.com` | Base URL for Wishlist Core endpoints. |\n| `analytics_base_url` | `https://analytics.getflits.com` | Base URL for Analytics Events endpoints. |\n| `jwt_token` | `eyJhbGci...` | This will be provided by Flits Team. |\n| `merchant_id` | `12345` | This will be provided by Flits Team. |\n| `shopify_customer_id` | `6789012345` | The Shopify customer ID you are operating on. |\n\nEvery request in this collection references these variables using the `{{variable_name}}` syntax — update them once and all requests stay in sync.\n\n---\n\n### Step 3 — Make Your First API Call\n\nThe simplest way to verify your setup is to call **Add to Wishlist**.\n\n**Request:**\n\n```\nPOST {{wishlist_base_url}}/core/wishlist/actions\n\n ```\n\n**Headers:**\n\n```\nContent-Type:  application/json\nAuthorization: Bearer {{jwt_token}}\nmerchant_id:   {{merchant_id}}\n\n ```\n\n**Body:**\n\n``` antlr4\n[\n  {\n    \"merchant_id\": \"{{merchant_id}}\",\n    \"operation\": \"create\",\n    \"action\": \"wishlisted\",\n    \"is_guest\": false,\n    \"customer_email\": \"{{customer_email}}\",\n    \"product_id\": {{product_id}},\n    \"variant_id\": {{variant_id}},\n    \"product_handle\": \"{{product_handle}}\",\n    \"product_title\": \"{{product_title}}\",\n    \"variant_title\": \"{{variant_title}}\",\n    \"product_image\": \"{{product_image}}\",\n    \"sku\": \"{{sku}}\",\n    \"product_type\": \"{{product_type}}\",\n    \"price\": {{price}},\n    \"inventory_count\": {{inventory_count}}\n  }\n]\n\n ```\n\nOpen the **Add to Wishlist** request in the **Wishlist Core** folder, ensure your environment is selected, and click **Send**.\n\n---\n\n### Step 4 — Verify the Response\n\nA successful response returns HTTP `201` with a JSON body confirming the item was added:\n\n``` json\n{\n  \"status\": true,\n  \"message\": \"Item added to wishlist successfully.\",\n  \"data\": { ... }\n}\n\n ```\n\nIf you receive a `401 Unauthorized`, double-check that your `jwt_token` and `merchant_id` environment variables are set correctly and that the token has not expired.\n\n---\n\n## Authentication & Configuration\n\nAll endpoints in this collection require the following headers on every request:\n\n| Header | Value | Required | Description |\n| --- | --- | --- | --- |\n| `Content-Type` | `application/json` | Yes | All request bodies must be JSON. |\n| `Authorization` | `Bearer {{jwt_token}}` | Yes | This will be provided by Flits Team. |\n| `merchant_id` | `{{merchant_id}}` | Yes | This will be provided by Flits Team. |\n\n> **Note:** `{{jwt_token}}` and `{{merchant_id}}` above are environment variable placeholders. Replace them with your actual credentials when making requests. \n  \n> [!IMPORTANT] All three headers are required on every request\n> `Authorization: Bearer {{jwt_token}}`, `merchant_id`, and `Content-Type` must be present on every Wishlist API call.\n> The JWT token and merchant ID are issued by the Flits team. Configure them once under **Environment Variables** and they are applied automatically across all requests.\n  \n\n### JWT Token\n\nThis will be provided by Flits Team.\n\n---\n\n## Environment Matrix\n\n| Environment | `wishlist_base_url` | `analytics_base_url` | Notes |\n| --- | --- | --- | --- |\n| **Production** | `https://wishlist.getflits.com` | `https://analytics.getflits.com` | Live merchant data. Use with caution. |\n| **Sandbox** | _(not available)_ | _(not available)_ | A sandbox environment is not currently offered. All testing should be done against production with test merchant credentials provided by the Flits team. |\n\n> If a sandbox environment becomes available, this table will be updated and a changelog entry will be added. \n  \n\n---\n\n## API Groups\n\n| Group | Base URL Variable | Description |\n| --- | --- | --- |\n| **Wishlist Core** | `{{wishlist_base_url}}` | Add, remove, query wishlist items, and link guest customers. |\n| **Analytics Events** | `{{analytics_base_url}}` | Track wishlist button clicks and add-to-cart events. |\n| **Wishlist Share and Manage Collections** | `{{wishlist_base_url}}` | Manage wishlist collections, share a wishlist or collection, serve the shared page, and run collection-scoped item queries. |\n| **Save for Later** | `{{wishlist_base_url}}` | Save cart or product items for later (reuses the wishlist endpoints with `wishlist_type: \"save_for_later\"`), read and count saved items, remove them, move them back to the cart, and track save events. |\n\n> **Note:** `{{wishlist_base_url}}` resolves to `https://wishlist.getflits.com` and `{{analytics_base_url}}` resolves to `https://analytics.getflits.com` once the environment variables are configured. \n  \n\n---\n\n## Data Model Glossary\n\nThe following identifiers appear across multiple endpoints. Understanding the distinction between them is critical for correct integration.\n\n| Field | Type | Description |\n| --- | --- | --- |\n| `merchant_id` | string | This will be provided by Flits Team. |\n| `shopify_customer_id` | string / number | The native Shopify customer ID (numeric). Identifies a logged-in, registered customer. Obtained from Shopify's customer object after authentication. |\n| `customer_id` | string | The internal Flits customer ID. Used in analytics event bodies and some response payloads. Not the same as `shopify_customer_id`. |\n| `guest_customer_id` | string | A temporary identifier assigned to a guest (unauthenticated) user session by the Flits platform. Used in the Link Guest endpoint to migrate a guest session to a Shopify customer account. |\n| `guest_browser_id` | string | A browser fingerprint or device identifier used to track guest sessions across page loads. Appears in response payloads only — not required in request bodies. |\n| `product_id` | number | The Shopify product ID. Identifies the parent product in the Shopify product hierarchy. |\n| `variant_id` | number | The Shopify product variant ID. Identifies a specific variant (e.g., size, colour) of a product. Both `product_id` and `variant_id` are required together to uniquely identify a wishlist item. |\n\n---\n\n## Rate Limiting & Error Handling\n\n### Rate Limits\n\nThere are currently **no enforced rate limits** on this API. However, we recommend:\n\n- Avoiding tight polling loops — use event-driven calls instead.\n    \n- Batching requests where possible to reduce unnecessary load.\n    \n\nRate limiting may be introduced in future versions. Check the changelog below for updates.\n\n### CORS, TLS & Payload Policy\n\n| Policy | Detail |\n| --- | --- |\n| **TLS** | TLS 1.2 or higher is required for all connections. Requests over plain HTTP will be rejected. |\n| **CORS** | CORS preflight (`OPTIONS`) requests are **not supported**. These APIs are designed for server-to-server integration only. Do not call them directly from browser-side JavaScript. |\n| **Max request body size** | There is no documented hard limit, but we recommend keeping individual request payloads under **1 MB**. For bulk wishlist operations, batch items into multiple requests if needed. |\n\n### Standard Error Response Format\n\nAll error responses follow a consistent JSON structure:\n\n``` json\n{\n  \"status\": false,\n  \"message\": \"A human-readable description of the error.\",\n  \"errors\": { }\n}\n\n ```\n\n### HTTP Status Code Reference\n\n| Status Code | Meaning | Common Cause |\n| --- | --- | --- |\n| `200` | OK | Request succeeded (used by query and analytics endpoints). |\n| `201` | Created | Resource successfully created (used by Add/Remove Wishlist). |\n| `400` | Bad Request | Missing or invalid request parameters. Check the `message` field. |\n| `401` | Unauthorized | Missing, invalid, or expired JWT token. |\n| `404` | Not Found | The requested resource does not exist (e.g., customer not found). |\n| `409` | Conflict | Duplicate operation (e.g., guest already linked to a Shopify customer). |\n\n### Support & Debugging\n\nWhen filing a support ticket with the Flits team, include the following in your report to enable fast diagnosis:\n\n| Field | Where to find it |\n| --- | --- |\n| `merchant_id` | This will be provided by Flits Team. |\n| `shopify_customer_id` | The customer ID used in the failing request body or filter. |\n| Timestamp (UTC) | The exact time the request was made. |\n| Request endpoint | The full URL and HTTP method. |\n| Response body | The full JSON error response returned by the API. |\n| HTTP status code | The status code returned (e.g., `401`, `400`). |\n\n> If the API returns an `x-request-id` response header, always include its value in your support ticket — it allows the Flits team to locate the exact server-side log entry for your request. \n  \n\n### Troubleshooting\n\n| Symptom | Likely Cause | Resolution |\n| --- | --- | --- |\n| `401 Unauthorized` | Token missing or expired | Verify `{{jwt_token}}` is set in your environment and has not expired. Contact Flits team to re-issue if needed. |\n| `400 Bad Request` | Missing required field | Read the `message` field in the response — it identifies the missing parameter. |\n| `404 Not Found` | Invalid customer ID | Confirm `{{shopify_customer_id}}` is a valid Shopify customer ID for this merchant. |\n| `409 Conflict` | Already linked | The guest session has already been linked to this Shopify customer. |\n| Empty wishlist response | No items added yet | This is expected — a `200` with an empty result set is not an error. |\n\n> **Note:** `{{jwt_token}}` and `{{shopify_customer_id}}` in the table above are environment variable placeholders — replace them with your actual values. \n  \n\n---\n\n## Webhooks\n\n> **Coming soon** — Webhook support for real-time wishlist event notifications (e.g., item added, item removed, guest linked) is on the Flits roadmap. See the changelog for updates when this feature is released. \n  \n\nWhen webhooks are available, they will allow your server to receive push notifications for wishlist events without polling the API.\n\n---\n\n## API Versioning & Changelog\n\n**Current Version:** `v1.1`\n\nFuture versions will be introduced via URL path prefixes (e.g., `/v2/core/wishlist/actions`) to maintain full backward compatibility. You will be notified of breaking changes in advance.\n\n### Changelog\n\n#### v1.1 — May 2026\n\n**Changed**\n\n- Collection variables introduced: `wishlist_base_url` and `analytics_base_url` replace hardcoded base URLs in all requests.\n    \n**Fixed**\n\n- Getting Started → Step 3 example body corrected to match the actual `Add to Wishlist` request structure (`operation: \"create\"`, flat body array, all required fields).\n    \n#### v1.0 — April 2026\n\n**Added**\n\n- Initial release — Wishlist Core (Add, Remove, Query, Link Guest) and Analytics Events (Button Click, Add to Cart).",
       "event": [
         {
           "listen": "prerequest",
@@ -13496,6 +14655,31 @@
       "key": "receiver_shopify_customer_id",
       "value": "",
       "description": "Shopify Customer ID of the existing customer who is accepting the referral invitation."
+    },
+    {
+      "key": "customer_id",
+      "value": "",
+      "description": "Internal Flits customer id used in analytics event bodies; \"-1\" for guests."
+    },
+    {
+      "key": "guest_browser_id",
+      "value": "",
+      "description": "Browser-generated identifier for a guest shopper (used instead of shopify_customer_id for guest Save for Later)."
+    },
+    {
+      "key": "customer_hash",
+      "value": "",
+      "description": "Customer hash used by the storefront analytics event."
+    },
+    {
+      "key": "shop_domain",
+      "value": "your-store.myshopify.com",
+      "description": "Shopify storefront domain for same-origin AJAX cart calls (/cart.js, /cart/change.js, /cart/add.js)."
+    },
+    {
+      "key": "cart_line_key",
+      "value": "",
+      "description": "Cart line item key from a fresh GET /cart.js, used by /cart/change.js."
     }
   ]
 }
