@@ -357,6 +357,10 @@ body {
   z-index: 50;
   transition: transform var(--transition);
   margin-left: 10px;
+  /* Wheel/touch over the sidebar header (search box) must not scroll the
+     page behind it either; .sidebar__nav handles its own scrolling. */
+  overflow: hidden;
+  overscroll-behavior: contain;
 }
 
 .sidebar__header {
@@ -401,6 +405,9 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 6px 0 32px;
+  /* At the top/bottom of the nav, don't hand leftover wheel/touch scroll to
+     the page — otherwise the right-side content scrolls along with it. */
+  overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar) transparent;
 }
@@ -766,6 +773,38 @@ html:has(body.sidebar-open) { overflow: hidden; }
   padding-left: var(--space-4);
   margin: var(--space-4) 0;
   color: var(--text-content);
+}
+
+/* Callout variant of the blockquote component. Opt-in from markdown via
+   `> [!IMPORTANT] Title` so existing plain blockquotes are unaffected. */
+.prose .md-callout {
+  border-left: 4px solid var(--callout-border);
+  background: var(--callout-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-5) 0;
+}
+
+.prose .md-callout .md-callout__title {
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--callout-title);
+}
+
+.prose .md-callout .md-callout__body {
+  margin: 0 0 var(--space-2);
+  color: var(--text-content);
+}
+
+.prose .md-callout .md-callout__body:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .prose .md-callout {
+    padding: var(--space-3);
+  }
 }
 
 .md-table-wrap {

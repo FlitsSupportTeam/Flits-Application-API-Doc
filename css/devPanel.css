@@ -127,6 +127,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  min-width: 0;   /* allow the row to shrink so the Copy button is never clipped */
 }
 
 /* ── Dropdown (select wrapper + custom chevron) ───────────────────────── */
@@ -200,6 +201,24 @@
   border-color: rgba(239, 68, 68, 0.32);
 }
 .dev-panel__select--resp.resp-5xx:hover { color: #f87171; }
+
+/* Response scenario labels can be long (e.g. "400 Bad Request — Missing
+   product_id / variant_id"). Cap and ellipsize the RESPONSE dropdown only, so a
+   long label never widens the row enough to push the Copy button out of the
+   card. The full scenario still shows in the open dropdown and in the response
+   meta line below. The short language dropdown is left untouched. */
+.dev-panel__select-wrap:has(.dev-panel__select--resp) {
+  min-width: 0;
+  flex: 0 1 200px;
+}
+.dev-panel__select--resp {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 /* ── Copy button ──────────────────────────────────────────────────────── */
 

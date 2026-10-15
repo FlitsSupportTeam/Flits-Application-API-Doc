@@ -133,8 +133,8 @@ function _varRow(name, value) {
   return `
     <div class="env-popup__var" data-env-row="${esc(name)}" role="listitem">
       <label class="env-popup__var-name"
-             title="{{${esc(name)}}}"
-             for="env-var-${esc(name)}">{{${esc(name)}}}</label>
+             title="${esc(name)}"
+             for="env-var-${esc(name)}">${esc(name)}</label>
       <div class="env-popup__var-input-wrap">
         <input type="text"
                class="env-popup__var-input"
@@ -305,9 +305,12 @@ function _updatePopupInputs() {
 }
 
 function _filterVars(popup, query) {
+  // Ignore Postman-style curly braces so a search for "{{app_name}}" (or a
+  // partial like "{{app") still matches the variable "app_name".
+  const q = (query || '').replace(/[{}]/g, '').trim();
   popup.querySelectorAll('[data-env-row]').forEach(row => {
     const name = (row.dataset.envRow || '').toLowerCase();
-    row.hidden = query ? !name.includes(query) : false;
+    row.hidden = q ? !name.includes(q) : false;
   });
 }
 

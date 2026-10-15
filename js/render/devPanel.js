@@ -245,8 +245,7 @@ export function handleDevPanelInteraction(target) {
 
 function _buildPanel(api) {
   const samples   = api.codeSamples || { curl: api.curl || '' };
-  const respMap   = _groupResponses(api.responses);
-  const respPairs = [...respMap.entries()];
+  const respList  = _orderedResponses(api.responses);
 
   return `
     <aside class="dev-panel"
@@ -272,7 +271,7 @@ function _buildPanel(api) {
         <!-- ── Code Samples pane ────────────────────────────────── -->
         <div class="dev-panel__pane" data-pane="code">
           ${_buildRequestCard(samples)}
-          ${respPairs.length ? _buildResponseCard(respPairs) : ''}
+          ${respList.length ? _buildResponseCard(respList) : ''}
         </div>
 
         <!-- ── Try It pane ──────────────────────────────────────── -->
@@ -318,23 +317,24 @@ function _buildRequestCard(samples) {
     </div>`;
 }
 
-function _buildResponseCard(pairs) {
-  const firstCls = _respClass(String(pairs[0][0]));
-  const options  = pairs.map(([code, items]) => {
-    const primary = items.find(r => !r.isExample) || items[0];
-    const status  = primary?.status ? ` ${esc(primary.status)}` : '';
-    return `<option value="${esc(String(code))}">${esc(String(code))}${status}</option>`;
+function _buildResponseCard(list) {
+  const firstCls = _respClass(String(list[0].code));
+  // One option + one panel per saved example (not one per status code), so every
+  // captured scenario — including several that share a code, e.g. multiple
+  // "200 OK — <scenario>" or "400 — <scenario>" — is individually selectable.
+  const options  = list.map(({ code, r }, i) => {
+    const label = r.name || `${code}${r.status ? ' ' + r.status : ''}`;
+    return `<option value="${i}" data-code="${esc(String(code))}">${esc(_truncate(label, 54))}</option>`;
   }).join('');
 
-  const panels = pairs.map(([code, items], i) => {
-    const primary = items.find(r => !r.isExample) || items[0];
-    const hl      = highlightCode(primary?.body || '', 'json');
-    const status  = esc(primary?.status || '');
-    const name    = esc(_truncate(primary?.name || '', 56));
-    const cls     = _respClass(code);
+  const panels = list.map(({ code, r }, i) => {
+    const hl     = highlightCode(r.body || '', 'json');
+    const status = esc(r.status || '');
+    const name   = esc(_truncate(r.name || '', 56));
+    const cls    = _respClass(code);
     return `
       <div class="dev-panel__resp-panel${i === 0 ? ' is-active' : ''}"
-           data-resp-panel="${esc(String(code))}" ${i !== 0 ? 'hidden' : ''}>
+           data-resp-panel="${i}" ${i !== 0 ? 'hidden' : ''}>
         ${(status || name) ? `
         <p class="dev-panel__resp-meta">
           <span class="dev-panel__resp-dot ${cls}"></span>
@@ -644,11 +644,12 @@ function _switchLang(select, panel) {
 }
 
 function _switchResp(select, panel) {
-  const code = select.value;
+  const idx  = select.value;
+  const code = select.selectedOptions?.[0]?.dataset.code || '';
   select.className = select.className.replace(/\bresp-\w+/g, '').trim();
   select.classList.add(_respClass(code));
   panel.querySelectorAll('.dev-panel__resp-panel').forEach(p => {
-    const on = p.getAttribute('data-resp-panel') === code;
+    const on = p.getAttribute('data-resp-panel') === idx;
     p.classList.toggle('is-active', on);
     p.hidden = !on;
   });
@@ -864,6 +865,19 @@ function _groupResponses(responses) {
     const bv = typeof b[0] === 'number' ? b[0] : 999;
     return av - bv;
   }));
+}
+
+/**
+ * Flat, display-ordered list of saved examples: grouped by status code (via
+ * _groupResponses, which also drops curl-only examples) and then flattened so
+ * every example keeps its own entry. Each entry is { code, r }.
+ */
+function _orderedResponses(responses) {
+  const flat = [];
+  for (const [code, items] of _groupResponses(responses)) {
+    for (const r of items) flat.push({ code, r });
+  }
+  return flat;
 }
 
 function _respClass(code) {

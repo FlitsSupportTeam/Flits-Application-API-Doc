@@ -18,6 +18,7 @@ import { initializeChatAssistant } from './features/chatAssistant.js';
 import { initEnvPanel, refreshEnvPanel } from './render/envPanel.js';
 import { onEnvChange } from './features/envStore.js';
 import { refreshAllTryItPanels } from './render/devPanel.js';
+import { refreshEnvTemplates } from './render/pageView.js';
 
 const app = document.getElementById('app');
 
@@ -42,10 +43,12 @@ async function bootstrap() {
 
     // Global Environment Variables panel — discover vars, load from localStorage
     initEnvPanel(doc);
-    // When env changes: refresh the panel badge + all open Try It panels
+    // When env changes: refresh the panel badge, all open Try It panels and
+    // the env-resolved URL in the API page header
     onEnvChange(() => {
       refreshEnvPanel();
       refreshAllTryItPanels();
+      refreshEnvTemplates();
     });
 
     document.getElementById('download-collection-btn')

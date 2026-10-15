@@ -52,6 +52,10 @@
   --bg: #fafafa;
   --bg-elevated: #ffffff;
   --bg-subtle: #f4f4f5;
+  /* Callout (highlighted note) variant of the blockquote component */
+  --callout-bg: #fffbeb;
+  --callout-border: #f59e0b;
+  --callout-title: #92400e;
   --bg-code: #18181b;
   --border: #e4e4e7;
   --border-subtle: #f0f0f2;
@@ -84,6 +88,10 @@
   --bg: #09090b;
   --bg-elevated: #121214;
   --bg-subtle: #1a1a1e;
+  /* Callout (highlighted note) variant of the blockquote component */
+  --callout-bg: rgba(245, 158, 11, 0.10);
+  --callout-border: #f59e0b;
+  --callout-title: #fcd34d;
   --bg-code: #0c0c0e;
   --border: #27272a;
   --border-subtle: #1f1f23;

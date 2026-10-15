@@ -54,6 +54,10 @@
   --bg: #fafafa;
   --bg-elevated: #ffffff;
   --bg-subtle: #f4f4f5;
+  /* Callout (highlighted note) variant of the blockquote component */
+  --callout-bg: #fffbeb;
+  --callout-border: #f59e0b;
+  --callout-title: #92400e;
   --bg-code: #18181b;
   --border: #e4e4e7;
   --border-subtle: #f0f0f2;
@@ -86,6 +90,10 @@
   --bg: #09090b;
   --bg-elevated: #121214;
   --bg-subtle: #1a1a1e;
+  /* Callout (highlighted note) variant of the blockquote component */
+  --callout-bg: rgba(245, 158, 11, 0.10);
+  --callout-border: #f59e0b;
+  --callout-title: #fcd34d;
   --bg-code: #0c0c0e;
   --border: #27272a;
   --border-subtle: #1f1f23;
@@ -860,6 +868,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  min-width: 0;   /* allow the row to shrink so the Copy button is never clipped */
 }
 
 /* ── Dropdown (select wrapper + custom chevron) ───────────────────────── */
@@ -933,6 +942,24 @@
   border-color: rgba(239, 68, 68, 0.32);
 }
 .dev-panel__select--resp.resp-5xx:hover { color: #f87171; }
+
+/* Response scenario labels can be long (e.g. "400 Bad Request — Missing
+   product_id / variant_id"). Cap and ellipsize the RESPONSE dropdown only, so a
+   long label never widens the row enough to push the Copy button out of the
+   card. The full scenario still shows in the open dropdown and in the response
+   meta line below. The short language dropdown is left untouched. */
+.dev-panel__select-wrap:has(.dev-panel__select--resp) {
+  min-width: 0;
+  flex: 0 1 200px;
+}
+.dev-panel__select--resp {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 /* ── Copy button ──────────────────────────────────────────────────────── */
 
@@ -1095,7 +1122,6 @@
   .dev-panel__copy { font-size: 0.78rem; padding: 6px 12px; }
   .dev-panel__pre { font-size: 0.8rem; }
 }
-
 
 /* ══════════════════════════════════════════════════════════════════════════
    TAB BAR
@@ -1283,6 +1309,79 @@
   font-size: 0.66rem;
   line-height: 1.45;
   color: #6b6b75;
+}
+
+/* ── Optional body-field checkbox row ───────────────────────────────────── */
+/* Row containing the checkbox + field-name label */
+.tryit__field-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 5px;
+}
+
+/* The opt-in checkbox */
+.tryit__opt-cb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
+  position: relative;
+  top: 0;
+}
+.tryit__opt-cb:hover {
+  border-color: rgba(99, 91, 255, 0.55);
+  background: rgba(99, 91, 255, 0.08);
+}
+.tryit__opt-cb:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 91, 255, 0.28);
+}
+/* Checked state — filled accent background with a tick */
+.tryit__opt-cb:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.tryit__opt-cb:checked::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: -1px;
+  width: 7px;
+  height: 4px;
+  border-left: 1.5px solid #fff;
+  border-bottom: 1.5px solid #fff;
+  transform: rotate(-45deg) translateY(2px);
+}
+
+/* Label next to the checkbox — no bottom margin (head row handles spacing) */
+.tryit__lbl--opt {
+  margin-bottom: 0 !important;
+  cursor: pointer;
+  color: #71717a;
+  transition: color 0.12s;
+}
+.tryit__field-head:has(.tryit__opt-cb:checked) .tryit__lbl--opt {
+  color: #c4b5fd;  /* accent-muted tint when active */
+}
+
+/* Body input when its checkbox is unchecked — visually dimmed */
+.tryit__bval:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: #52525b;
+}
+.tryit__bval:disabled:focus {
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: none;
 }
 
 .tryit__token-wrap {
@@ -1547,12 +1646,27 @@
 .env-popup__var[hidden] { display: none !important; }
 
 /* ── Button bar (thin strip above docs, zero accordion behaviour) ──────────── */
+/* Horizontal margin/padding mirror .docs-layout at every breakpoint (main.css)
+   so the button's right edge lines up with the right column below it. */
 .env-btn-bar {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 8px 0 4px;
+  margin: 0 10px;
+  padding: 8px var(--space-5) 4px;
   position: relative;
+}
+
+@media (max-width: 1199px) {
+  .env-btn-bar { margin: 0; padding: 8px var(--space-6) 4px; }
+}
+
+@media (max-width: 768px) {
+  .env-btn-bar { padding: 8px var(--space-4) 4px; }
+}
+
+@media (max-width: 480px) {
+  .env-btn-bar { padding: 8px var(--space-3) 4px; }
 }
 
 /* ── Trigger button ────────────────────────────────────────────────────────── */
@@ -1964,10 +2078,6 @@
 
 /* ── Mobile — bottom sheet ────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .env-btn-bar {
-    padding: 8px 16px 4px;
-  }
-
   .env-popup {
     position: fixed !important;
     left: 0 !important;
@@ -2338,6 +2448,10 @@ body {
   z-index: 50;
   transition: transform var(--transition);
   margin-left: 10px;
+  /* Wheel/touch over the sidebar header (search box) must not scroll the
+     page behind it either; .sidebar__nav handles its own scrolling. */
+  overflow: hidden;
+  overscroll-behavior: contain;
 }
 
 .sidebar__header {
@@ -2382,6 +2496,9 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 6px 0 32px;
+  /* At the top/bottom of the nav, don't hand leftover wheel/touch scroll to
+     the page — otherwise the right-side content scrolls along with it. */
+  overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar) transparent;
 }
@@ -2747,6 +2864,38 @@ html:has(body.sidebar-open) { overflow: hidden; }
   padding-left: var(--space-4);
   margin: var(--space-4) 0;
   color: var(--text-content);
+}
+
+/* Callout variant of the blockquote component. Opt-in from markdown via
+   `> [!IMPORTANT] Title` so existing plain blockquotes are unaffected. */
+.prose .md-callout {
+  border-left: 4px solid var(--callout-border);
+  background: var(--callout-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-5) 0;
+}
+
+.prose .md-callout .md-callout__title {
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--callout-title);
+}
+
+.prose .md-callout .md-callout__body {
+  margin: 0 0 var(--space-2);
+  color: var(--text-content);
+}
+
+.prose .md-callout .md-callout__body:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .prose .md-callout {
+    padding: var(--space-3);
+  }
 }
 
 .md-table-wrap {
@@ -3511,7 +3660,6 @@ html:has(body.sidebar-open) { overflow: hidden; }
   html,
   .docs-layout .page-scroll { scroll-behavior: auto; }
 }
-
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SHOPIFY-ONLY CUSTOM OVERRIDES — manual, NOT generated from local css/*.

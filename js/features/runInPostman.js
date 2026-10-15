@@ -25,6 +25,7 @@
 
 import { getCollectionPath } from '../parser/postmanParser.js';
 import { docStore } from '../data/docStore.js';
+import { getEnv, discoverVariables } from './envStore.js';
 
 // ─── Configuration ──────────────────────────────────────────────────────────
 // Leave empty for the self-hosted import-by-link flow (default).
@@ -222,26 +223,96 @@ async function _downloadCollection(collectionUrl) {
     const res  = await fetch(collectionUrl);
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
     const json = await res.json();
-    const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
-    const url  = URL.createObjectURL(blob);
+    _injectEnvVariables(json);
 
     const rawName  = docStore.doc?.meta?.name || 'api-collection';
-    const filename = rawName.trim()
+    const baseName = rawName.trim()
       .replace(/[^a-zA-Z0-9._-]+/g, '-')
-      .replace(/^-+|-+$/g, '')
-      + '.postman_collection.json';
+      .replace(/^-+|-+$/g, '');
 
-    const a = Object.assign(document.createElement('a'), {
-      href:     url,
-      download: filename,
-      style:    'display:none',
-    });
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(() => { a.remove(); URL.revokeObjectURL(url); }, 1000);
+    _saveJson(json, baseName + '.postman_collection.json');
+    // Second file is delayed slightly — browsers can drop back-to-back
+    // programmatic downloads fired in the same tick.
+    setTimeout(() => {
+      _saveJson(_buildEnvironment(rawName, json.variable), baseName + '.postman_environment.json');
+    }, 300);
   } catch (err) {
     console.error('[RunInPostman] Download failed:', err);
   }
+}
+
+function _saveJson(data, filename) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a = Object.assign(document.createElement('a'), {
+    href:     url,
+    download: filename,
+    style:    'display:none',
+  });
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { a.remove(); URL.revokeObjectURL(url); }, 1000);
+}
+
+/**
+ * Postman Environment file (importable alongside the collection). Postman's
+ * collection format has no slot for environments, so this ships as a second
+ * file with the same keys/values as the collection variables. Once imported
+ * and selected in Postman's environment dropdown, these values take priority
+ * over the collection variables.
+ */
+function _buildEnvironment(name, variables) {
+  const id = globalThis.crypto?.randomUUID?.() ||
+    'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+      const r = Math.random() * 16 | 0;
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  return {
+    id,
+    name,
+    values: (variables || []).map(v => ({
+      key:     v.key,
+      value:   v.value ?? '',
+      type:    'default',
+      enabled: true,
+    })),
+    _postman_variable_scope: 'environment',
+    _postman_exported_at:    new Date().toISOString(),
+  };
+}
+
+/**
+ * Carry the Environment Variables panel values into the downloaded file.
+ *
+ * Panel values live only in this browser's localStorage, so the raw collection
+ * JSON always ships with empty variable values. Postman imports a collection's
+ * top-level `variable` array as Collection Variables, so writing the values
+ * there makes every {{var}} resolve in Postman right after import, even if the
+ * companion environment file (see _buildEnvironment) is not imported/selected.
+ *
+ *   • Declared variable + panel value → value overwritten with the panel value.
+ *   • Declared variable, no panel value → collection default kept (e.g. perPage).
+ *   • Panel variable not declared in the collection → appended, so it exists in
+ *     Postman instead of showing as an unresolved variable.
+ */
+function _injectEnvVariables(json) {
+  if (!json || typeof json !== 'object') return;
+
+  const env  = getEnv();
+  const vars = Array.isArray(json.variable) ? json.variable : [];
+  const declared = new Set(vars.map(v => v?.key));
+
+  vars.forEach(v => {
+    const value = env[v?.key];
+    if (value !== undefined && value !== '') v.value = value;
+  });
+
+  discoverVariables(docStore.doc).forEach(key => {
+    if (declared.has(key)) return;
+    vars.push({ key, value: env[key] ?? '', type: 'string' });
+  });
+
+  json.variable = vars;
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

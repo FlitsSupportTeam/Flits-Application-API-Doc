@@ -5,6 +5,7 @@ import { docStore } from '../data/docStore.js';
 import { markdownToHtml } from '../utils/markdown.js';
 import { highlightCode } from '../utils/highlighter.js';
 import { escapeHtml as esc } from './contentHelpers.js';
+import { applyEnv } from '../features/envStore.js';
 // renderCodeSamplesSection and renderResponsesSection moved to the right-side dev panel
 import { assignProseHeadingIds } from '../toc/tocCollector.js';
 
@@ -73,9 +74,21 @@ function renderApiMetaRow(api) {
   return `
     <div class="page-hero__meta-row">
       <span class="method-badge method-${method}">${esc(api.method)}</span>
-      <code class="page-hero__url">${esc(api.urlDisplay)}</code>
+      <code class="page-hero__url" data-env-template="${esc(api.urlDisplay)}">${esc(applyEnv(api.urlDisplay))}</code>
     </div>
   `;
+}
+
+/**
+ * Re-resolve every [data-env-template] element on the current page against the
+ * global Environment Variables. Called whenever the env changes; placeholders
+ * without a value stay as {{var}}.
+ */
+export function refreshEnvTemplates() {
+  document.querySelectorAll('[data-env-template]').forEach(el => {
+    const resolved = applyEnv(el.dataset.envTemplate);
+    if (el.textContent !== resolved) el.textContent = resolved;
+  });
 }
 
 function renderApiHeader(api) {
@@ -107,7 +120,7 @@ function renderApiPage(api) {
         <h2 class="page-section__title">Endpoint</h2>
         <div class="endpoint-bar">
           <span class="method-badge method-${api.method.toLowerCase()}">${api.method}</span>
-          <code class="endpoint-bar__url">${esc(api.urlDisplay)}</code>
+          <code class="endpoint-bar__url" data-env-template="${esc(api.urlDisplay)}">${esc(applyEnv(api.urlDisplay))}</code>
         </div>
         ${api.baseUrl ? `<p class="page-meta">Base URL: <code>${esc(api.baseUrl)}</code></p>` : ''}
       </section>
