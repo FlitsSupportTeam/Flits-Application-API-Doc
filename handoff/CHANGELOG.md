@@ -101,7 +101,7 @@ Major engineering milestones for handoff context. Not every commit — focus on 
 ## Documentation
 
 - `handoff/` engineering package (this changelog’s companion)
-- `README_HUMAN_FIRST.md` for humans
+- `README_FIRST.md` for humans
 
 ---
 

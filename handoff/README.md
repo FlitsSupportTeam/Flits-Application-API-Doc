@@ -7,7 +7,7 @@ This directory is the **complete handoff package** for continuing development wi
 | Audience | Document |
 |----------|----------|
 | **AI agent (Claude)** | Read [INDEX.md](./INDEX.md) in order, then dive into topic files as needed |
-| **Human developer** | [README_HUMAN_FIRST.md](./README_HUMAN_FIRST.md) at project root |
+| **Human developer** | [README_FIRST.md](../README_FIRST.md) at project root |
 | **Quick orientation** | [PROJECT_OVERVIEW.md](./PROJECT_OVERVIEW.md) |
 
 ## Documentation map

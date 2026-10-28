@@ -4,7 +4,7 @@ Premium, dynamic API documentation generated from your Postman collection. Built
 
 ## Documentation for contributors & AI handoff
 
-- **Humans:** [README_HUMAN_FIRST.md](./README_HUMAN_FIRST.md) — run locally, debug, update collection
+- **Humans:** [README_FIRST.md](./README_FIRST.md) — run locally, debug, update collection
 - **Engineering / Claude AI:** [handoff/](./handoff/) — full architecture, TOC system, routing, parser, known issues, changelog
 
 ## Features

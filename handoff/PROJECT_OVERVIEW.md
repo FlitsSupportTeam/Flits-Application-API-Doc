@@ -108,4 +108,4 @@ Approximate counts from last audit:
 ## Related files outside `handoff/`
 
 - `README.md` — Short project readme (update to point to `handoff/` for engineers)
-- `README_HUMAN_FIRST.md` — Human quick start at project root
+- `README_FIRST.md` — Human quick start at project root

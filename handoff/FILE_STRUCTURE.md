@@ -6,7 +6,7 @@ Project root: `apiDocCursor/`
 apiDocCursor/
 ├── index.html                 # Single HTML entry, loads main.js
 ├── README.md                  # Short project readme
-├── README_HUMAN_FIRST.md        # Human quick-start (handoff)
+├── README_FIRST.md              # Human quick-start (handoff)
 ├── package.json               # npm scripts: serve, audit:toc
 ├── .gitignore                 # node_modules, package-lock
 │
